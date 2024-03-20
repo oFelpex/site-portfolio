@@ -8,7 +8,7 @@
 .ceu {
     width: 100%;
     height: 300px;
-    background-image: -webkit-linear-gradient(hsla(240,75%,75%,.6), hsla(300,75%,75%,.2), transparent);
+    background-image: linear-gradient(hsla(240,75%,75%,.6), hsla(300,75%,75%,.2), transparent);
 }
 
 .circuloBranco {
@@ -30,7 +30,7 @@
 
 .nuvens{
     background-color: #fff;
-    background-image: -webkit-linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
+    background-image: linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
     border-radius: 1em;
     box-shadow: inset 0 0 0 px hsla(0,0%,100%,.5);
     display: inline-block;
@@ -40,6 +40,6 @@
     position: absolute;
     top: 10%;
     width: 3em;
-    -webkit-filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
-    animation: moveRightToLeft 10s linear infinite;
+    filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
+    animation: moveRightToLeft 60s linear infinite;
 }
