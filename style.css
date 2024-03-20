@@ -5,13 +5,13 @@
     background-size: auto auto;
 }
 
-.ceu {
+.sky {
     width: 100%;
     height: 300px;
     background-image: linear-gradient(hsla(240,75%,75%,.6), hsla(300,75%,75%,.2), transparent);
 }
 
-.circuloBranco {
+.whiteCircle {
     width: 250px;
     height: 250px;
     background: white;
@@ -28,7 +28,7 @@
     }
 }
 
-.nuvens{
+.clouds {
     background-color: #fff;
     background-image: linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
     border-radius: 1em;
