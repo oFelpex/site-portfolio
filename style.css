@@ -2,7 +2,9 @@
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
+    background-color: black;
     background-size: auto auto;
+    overflow: hidden;
 }
 
 .sky {
@@ -21,25 +23,57 @@
 
 @keyframes moveRightToLeft {
     0% { 
-        transform: translateX(0);
+        left: -100px;
     }
     100% {
-        transform: translateX(calc(-100% + 110vw)); /* Move o elemento para a esquerda da tela */
+        left: calc(100% + 50px); /* Move o elemento para a esquerda da tela */
     }
 }
 
-.clouds {
+/* Animação para mover de volta para a esquerda quando sai da tela */
+@keyframes resetToLeft {
+    0% {
+        left: calc(-100px); /* Move para fora da tela na esquerda */
+    }
+    100% {
+        left: calc(100% + 100px); /* Move para fora da tela na direita */
+    }
+}
+
+/* Aplicando a animação de volta para a esquerda quando um objeto sai da tela
+Lembrando que algumas clouds devem ser diferentes, 
+talvez uma dentro da outra para dar a impressão. */
+
+.cloudMain:nth-child(1) {
+    animation: moveRightToLeft 100s linear infinite;
+}
+.cloudMain:nth-child(2) {
+    animation: moveRightToLeft 80s linear infinite;
+}
+.cloudMain:nth-child(3) {
+    animation: moveRightToLeft 60s linear infinite;
+}
+.cloudMain:nth-child(4) {
+    animation: moveRightToLeft 40s linear infinite;
+}
+.cloudMain:nth-child(5) {
+    animation: moveRightToLeft 120s linear infinite;
+}
+.cloudMain:nth-child(6) {
+    animation: moveRightToLeft 140s linear infinite;
+}
+.cloudMain:nth-child(7) {
+    animation: moveRightToLeft 35s linear infinite;
+}
+
+
+
+
+.cloudMain {
     background-color: #fff;
     background-image: linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
     border-radius: 1em;
     box-shadow: inset 0 0 0 px hsla(0,0%,100%,.5);
-    display: inline-block;
-    height: 1em;
-    left: -2%;
-    margin-left: -1.5em;
     position: absolute;
-    top: 10%;
-    width: 3em;
     filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
-    animation: moveRightToLeft 60s linear infinite;
 }
