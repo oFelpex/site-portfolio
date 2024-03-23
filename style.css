@@ -75,3 +75,23 @@ talvez uma dentro da outra para dar a impressão. */
     filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
 }
 
+@keyframes rotate
+{
+    0% {
+        transform: rotate(0deg);
+        
+    }
+    100% {
+        transform: rotate(360deg);
+        height: 3px;
+        width: 3px;
+    }
+}
+.stars {
+    width: 4px;
+    height: 4px;
+    background: rgb(255, 255, 255);
+    rotate: 45deg;
+    transform: translate(-200%, -30%);
+    animation: rotate 10s linear infinite;
+}
