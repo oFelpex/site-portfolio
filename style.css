@@ -2,6 +2,7 @@
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
+    background-color: black;
     background-size: auto auto;
     overflow: hidden;
 }
@@ -65,9 +66,6 @@ talvez uma dentro da outra para dar a impressão. */
     animation: moveRightToLeft 35s linear infinite;
 }
 
-
-
-
 .cloudMain {
     background-color: #fff;
     background-image: linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
@@ -76,3 +74,4 @@ talvez uma dentro da outra para dar a impressão. */
     position: absolute;
     filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
 }
+
