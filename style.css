@@ -21,51 +21,26 @@
     transform: translate(-200%, -30%);
 }
 
+@keyframes moveLeftToRight {
+    0% { 
+        left: -200px;
+    }
+    100% {
+        left: calc(100% + 50px);
+    }
+}
+
 @keyframes moveRightToLeft {
     0% { 
-        left: -100px;
+        right: -200px;
     }
     100% {
-        left: calc(100% + 50px); /* Move o elemento para a esquerda da tela */
+        right: calc(100% + 50px); 
     }
 }
-
-/* Animação para mover de volta para a esquerda quando sai da tela */
-@keyframes resetToLeft {
-    0% {
-        left: calc(-100px); /* Move para fora da tela na esquerda */
-    }
-    100% {
-        left: calc(100% + 100px); /* Move para fora da tela na direita */
-    }
-}
-
 /* Aplicando a animação de volta para a esquerda quando um objeto sai da tela
 Lembrando que algumas clouds devem ser diferentes, 
 talvez uma dentro da outra para dar a impressão. */
-
-.cloudMain:nth-child(1) {
-    animation: moveRightToLeft 100s linear infinite;
-}
-.cloudMain:nth-child(2) {
-    animation: moveRightToLeft 80s linear infinite;
-}
-.cloudMain:nth-child(3) {
-    animation: moveRightToLeft 60s linear infinite;
-}
-.cloudMain:nth-child(4) {
-    animation: moveRightToLeft 40s linear infinite;
-}
-.cloudMain:nth-child(5) {
-    animation: moveRightToLeft 120s linear infinite;
-}
-.cloudMain:nth-child(6) {
-    animation: moveRightToLeft 140s linear infinite;
-}
-.cloudMain:nth-child(7) {
-    animation: moveRightToLeft 35s linear infinite;
-}
-
 .cloudMain {
     background-color: #fff;
     background-image: linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
@@ -91,7 +66,5 @@ talvez uma dentro da outra para dar a impressão. */
     width: 4px;
     height: 4px;
     background: rgb(255, 255, 255);
-    rotate: 45deg;
-    transform: translate(-200%, -30%);
     animation: rotate 10s linear infinite;
 }
