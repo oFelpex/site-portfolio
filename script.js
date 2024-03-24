@@ -1,32 +1,4 @@
-document.querySelectorAll('.cloudMain').forEach(function(cloudMain){
-    cloudMain.style.height = Math.floor(Math.random() * 4) + 'em';
-});
-
-document.querySelectorAll('.cloudMain').forEach(function(cloudMain){
-    cloudMain.style.top = Math.floor(Math.random() * 700) + 'px';
-});
-
-document.querySelectorAll('.cloudMain').forEach(function(cloudMain){
-    cloudMain.style.width = Math.floor(Math.random() * 10) + 'em';
-});
-
-document.querySelectorAll('.cloudMain').forEach(function(cloudMain){
-    cloudMain.style.left = Math.floor(Math.random() * -500) + 'px';
-});
-
-// Função para criar uma estrela
-function createStar() {
-    const star = document.createElement('div');
-    star.classList.add('stars');
-    star.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
-    document.body.appendChild(star);
-}
-
-// Criar 3 estrelas
-for (let i = 0; i < 3; i++) {
-    createStar();
-}
-
+//Cria as nuvens da esquerda
 function createCloudsLeft() {
     const cloud = document.createElement('div');
     cloud.classList.add('cloudMain');
@@ -38,7 +10,7 @@ function createCloudsLeft() {
     cloud.style.animationDuration = (Math.random() * ((150 - 50)) + 50) + 's';
     document.body.appendChild(cloud);
 }
-
+//Cria as nuvens da direita
 function createCloudsRight() {
     const cloud = document.createElement('div');
     cloud.classList.add('cloudMain');
@@ -51,8 +23,9 @@ function createCloudsRight() {
 
     document.body.appendChild(cloud);
 }
-
-
+/*Dois for's, cada uma para uma função de nuvem
+diferente, sendo o primeiro para as nuvens da esquerda
+e o segundo para as nuvens da direita*/
 for (let i = 0; i < 8; i++) {
     createCloudsLeft();
 }
@@ -60,6 +33,17 @@ for (let i = 0; i < 2; i++) {
     createCloudsRight();
 }
 
+// Função para criar estrelas
+function createStar() {
+    const star = document.createElement('div');
+    star.classList.add('stars');
+    star.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+    document.body.appendChild(star);
+}
+//Criar i estrelas
+for (let i = 0; i < 3; i++) {
+    createStar();
+}
 
 
 
