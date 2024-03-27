@@ -2,9 +2,10 @@
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
-    background-color: black;
     background-size: auto auto;
+    background-color: black;
     overflow: hidden;
+    transition: margin-top 0.5s ease;
 }
 
 /*Céu gradiente.*/
@@ -12,6 +13,7 @@
     width: 100%;
     height: 300px;
     background-image: linear-gradient(hsla(240,75%,75%,.6), hsla(300,75%,75%,.2), transparent);
+    transition: height 0.5s ease;
 }
 
 /*Círculo branco, apenas para eu saber onde ficará
@@ -39,8 +41,28 @@ a minha foto.*/
     width: 4px;
     height: 4px;
     background: rgb(255, 255, 255);
-    animation: rotate 10s linear infinite;
+    opacity: 0;
+    position: absolute;
+    animation: fadeIn 2s ease;
+    opacity: 100;
+    
+
 }
+
+button {
+    padding: 10px 20px; /* Define o preenchimento interno do botão */
+    background-color: #007bff; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
+    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
+}
+
+button:hover {
+    background-color: #0056b3; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
+}
+
 
 /*Animações que movem as nuvens, a primeira move
 as nuvens da esquerda para a direita e a segunda da
@@ -72,5 +94,24 @@ direita para a esquerda.*/
         transform: rotate(360deg);
         height: 3px;
         width: 3px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Opacidade inicial */
+    }
+    100% {
+        opacity: 0.9; /* Opacidade final */
+    }
+}
+
+@keyframes fadeInAndRotate {
+    0% {
+        opacity: 0; /* Opacidade inicial */
+    }
+    100% {
+        opacity: 0.9; /* Opacidade final */
+        transform: rotate(360deg); /* Inicia a rotação após a fadeIn */
     }
 }
