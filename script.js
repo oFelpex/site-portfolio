@@ -26,14 +26,17 @@ function createCloudsRight()
     document.body.appendChild(cloud);
 }
 
-function fullSky() {
+//função que cria uma nova div, a do fullSky
+function fullSky() 
+{
     const sky = document.createElement('div');
     sky.classList.add('fullSky');
     document.body.insertBefore(sky, document.body.firstChild); //Insere o céu no topo
 }
 
 // Função para criar estrelas
-function createStar() {
+function createStar() 
+{
     const star = document.createElement('div');
     star.classList.add('stars');
     star.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
@@ -44,11 +47,19 @@ function createStar() {
     document.body.appendChild(star);
 }
 
+function button() 
+{
+    const button = document.querySelector('button');
+    button.classList.add('button');
+    button.style.animation = 'moveToDown 2s ease';
+    button.style.animationFillMode = 'forwards';
+}
 
-function adicionarEspaco() {
+function adicionarEspacoAcima() {
     // Adiciona margem superior ao corpo da página
     document.body.style.marginTop = '800px'; // Altere o valor conforme necessário
     
+    button();
     fullSky();
     
     //Criar i estrelas
