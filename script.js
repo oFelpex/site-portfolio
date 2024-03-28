@@ -28,10 +28,8 @@ function createCloudsRight()
 
 function fullSky() {
     const sky = document.createElement('div');
-    sky.classList.add('sky');
-    sky.style.height = '300px'; // Altura fixa do céu
-    sky.style.position = 'absolute';
-    document.body.insertBefore(sky, document.body.firstChild); // Insere o céu no início do corpo
+    sky.classList.add('fullSky');
+    document.body.insertBefore(sky, document.body.firstChild); //Insere o céu no topo
 }
 
 // Função para criar estrelas
@@ -49,7 +47,7 @@ function createStar() {
 
 function adicionarEspaco() {
     // Adiciona margem superior ao corpo da página
-    document.body.style.marginTop = '600px'; // Altere o valor conforme necessário
+    document.body.style.marginTop = '800px'; // Altere o valor conforme necessário
     
     fullSky();
     
