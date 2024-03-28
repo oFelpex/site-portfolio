@@ -62,7 +62,7 @@ a minha foto.*/
 }
 
 
-button {
+buttonToUp {
     padding: 10px 20px; /* Define o preenchimento interno do botão */
     background-color: #007bff; /* Define a cor de fundo do botão */
     color: #fff; /* Define a cor do texto do botão */
@@ -72,14 +72,26 @@ button {
     transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
     position: absolute;
     top: 5%;
-    left: 85%;
-    
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-button:hover {
+buttonToUp:hover {
     background-color: #0056b3; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
 
+buttonToDown {
+    padding: 10px 20px; /* Define o preenchimento interno do botão */
+    background-color: #007bff; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
+    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
+    position: absolute;
+    top: 5%;
+    left: 50%;
+}
 
 /*Animações que movem as nuvens, a primeira move
 as nuvens da esquerda para a direita e a segunda da
@@ -142,5 +154,14 @@ direita para a esquerda.*/
     }
     100% {
         top: 120%;
+    }
+}
+
+@keyframes moveToUp {
+    0% {
+        top:120%;
+    }
+    100% {
+        top: 90%;
     }
 }

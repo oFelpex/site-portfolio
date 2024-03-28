@@ -47,19 +47,27 @@ function createStar()
     document.body.appendChild(star);
 }
 
-function button() 
+function buttonToUp() 
 {
-    const button = document.querySelector('button');
-    button.classList.add('button');
-    button.style.animation = 'moveToDown 2s ease';
+    const button = document.querySelector('buttonToUp');
+    button.classList.add('buttonToUp');
+    button.style.animation = 'moveToDown 1s ease';
     button.style.animationFillMode = 'forwards';
+    button.addEventListener('animationend', () => {
+        setTimeout(() => {
+            button.style.animation = 'moveToUp 1s ease'
+            button.textContent = 'Clique aqui para voltar!'; // Adiciona a classe 'infinito' após a conclusão da animação fadeIn
+            button.style.animationFillMode = 'forwards';
+        }, 5000);
+    });
 }
 
-function adicionarEspacoAcima() {
+function adicionarEspacoAcima() 
+{
     // Adiciona margem superior ao corpo da página
     document.body.style.marginTop = '800px'; // Altere o valor conforme necessário
-    
-    button();
+
+    buttonToUp();
     fullSky();
     
     //Criar i estrelas
@@ -80,3 +88,7 @@ function adicionarEspacoAcima() {
     }
 }
 
+function marginToNormal()
+{
+
+}
