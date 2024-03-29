@@ -1,4 +1,4 @@
-//Cria as nuvens da esquerda
+//Cria as nuvens da esquerda em locais aleatórios da parte esquerda da tela.
 function createCloudsLeft() 
 {
     const cloud = document.createElement('div');
@@ -26,7 +26,8 @@ function createCloudsRight()
     document.body.appendChild(cloud);
 }
 
-//função que cria uma nova div, a do fullSky
+
+//Função que cria uma nova div, a do fullSky.
 function fullSky() 
 {
     const sky = document.createElement('div');
@@ -34,7 +35,8 @@ function fullSky()
     document.body.insertBefore(sky, document.body.firstChild); //Insere o céu no topo
 }
 
-// Função para criar estrelas
+
+//Função para criar estrelas em locais aleatórios da tela.
 function createStar() 
 {
     const star = document.createElement('div');
@@ -47,6 +49,8 @@ function createStar()
     document.body.appendChild(star);
 }
 
+
+//Função para mudar a animação do botão que aciona a função adicionarEspacoAcime().
 function buttonToUp() 
 {
     const button = document.querySelector('buttonToUp');
@@ -55,20 +59,26 @@ function buttonToUp()
     button.style.animationFillMode = 'forwards';
 }
 
+
+//Variável clickedToUp que será importante no futuro.
 let clickedToUp = false;
+/*Função que adiciona margem ao body, além de iniciar algumas outras funções 
+como buttonToUp(), fullSky(), createStar() e, 
+createCloudsLeft e createCloudsRight, além de tornar true a variável clickedToUp.*/
 function adicionarEspacoAcima() 
 {
-    // Adiciona margem superior ao corpo da página
-    document.body.style.marginTop = '800px'; // Altere o valor conforme necessário
+    //Adiciona margem superior ao body da página.
+    document.body.style.marginTop = '800px';
 
     buttonToUp();
     fullSky();
     
-    //Criar i estrelas
+    //Criar i estrelas.
     for (let i = 0; i < 7; i++) 
     {
         createStar();
     }
+
     /*Dois for's, cada uma para uma função de nuvem
     diferente, sendo o primeiro para as nuvens da esquerda
     e o segundo para as nuvens da direita*/
@@ -81,11 +91,15 @@ function adicionarEspacoAcima()
         createCloudsRight();
     }
     
+    //Adiciona um delay de 5 segundos para tornar clickedToUp true.
     setTimeout(() => {
         clickedToUp = true;
     }, 5000);
 }
 
+/*Função que volta a margem ao padrão (0px), e 
+além de remover as estrelas e as núvens, 
+ainda adicionar uma animação para que seja mais flúida a alteração do céu.*/
 function marginToNormal()
 {
     document.body.style.marginTop = '0px';

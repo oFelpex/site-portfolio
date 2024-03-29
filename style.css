@@ -8,6 +8,7 @@
     transition: margin-top 2s ease;
 }
 
+
 /*Céu gradiente.*/
 .sky {
     width: 100%;
@@ -16,6 +17,7 @@
     background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
     transition: height 0.5s ease;
 }
+
 
 /*Céu completo*/
 .fullSky {
@@ -28,6 +30,7 @@
     background: linear-gradient(hsl(241, 100%, 12%), hsla(240, 75%, 75%, .6));
 }
 
+
 /*Círculo branco, apenas para eu saber onde ficará
 a minha foto.*/
 .whiteCircle {
@@ -38,6 +41,7 @@ a minha foto.*/
     transform: translate(-200%, -30%);
 }
 
+
 /*Classe que serve de base para as nuvens.*/
 .cloudMain {
     background-color: #fff;
@@ -47,6 +51,7 @@ a minha foto.*/
     position: absolute;
     filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
 }
+
 
 /*Classe base para as estrelas.*/
 .stars {
@@ -62,6 +67,7 @@ a minha foto.*/
 }
 
 
+/*Botão que ao clicar, muda o céu e aumenta a margem do topo.*/
 buttonToUp {
     padding: 10px 20px; /* Define o preenchimento interno do botão */
     background-color: #007bff; /* Define a cor de fundo do botão */
@@ -76,11 +82,13 @@ buttonToUp {
     transform: translate(-50%, -50%);
     z-index: 999;
 }
-
+/*Ao passar o mouse em cima...*/
 buttonToUp:hover {
     background-color: #0056b3; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
 
+
+/*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
 buttonToDown {
     padding: 10px 20px; /* Define o preenchimento interno do botão */
     background-color:  #509def22; /* Define a cor de fundo do botão */
@@ -94,9 +102,11 @@ buttonToDown {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+/*Ao passar o mouse em cima...*/
 buttonToDown:hover {
     background-color: #faa2e02f; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
+
 
 /*Animações que movem as nuvens, a primeira move
 as nuvens da esquerda para a direita e a segunda da
@@ -118,7 +128,8 @@ direita para a esquerda.*/
     }
 }
 
-/*animação apenas para rotacionar as estrelinhas.*/
+
+/*Animação apenas para rotacionar as estrelinhas.*/
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -133,6 +144,9 @@ direita para a esquerda.*/
     }
 }
 
+
+/*Animação que muda a opacidade das estrelas, para não aparecerem 
+do nada na tela.*/
 @keyframes fadeIn {
     0% {
         opacity: 0; /* Opacidade inicial */
@@ -142,6 +156,8 @@ direita para a esquerda.*/
     }
 }
 
+
+/*Animação que aumenta o height do fullSky para que preencha da tela.*/
 @keyframes moreSky{
     0% {
         height: 0px;
@@ -153,6 +169,8 @@ direita para a esquerda.*/
     }
 }
 
+
+/*Animação que é o oposto da moreSky, diminuindo o height.*/
 @keyframes lessSky{
     0% {
         height: 800px;
@@ -164,6 +182,8 @@ direita para a esquerda.*/
     }
 }
 
+
+/*Animações a seguir em processo de mudança.*/
 @keyframes moveButtonToDown {
     0% {
         top: 5%;
@@ -172,7 +192,6 @@ direita para a esquerda.*/
         top: 120%;
     }
 }
-
 @keyframes moveButtonToUp {
     0% {
         top:120%;
@@ -181,7 +200,6 @@ direita para a esquerda.*/
         top: 90%;
     }
 }
-
 @keyframes moveCloudToUp {
     0% {
         top:initial;
