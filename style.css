@@ -74,6 +74,7 @@ buttonToUp {
     top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 999;
 }
 
 buttonToUp:hover {
@@ -82,7 +83,7 @@ buttonToUp:hover {
 
 buttonToDown {
     padding: 10px 20px; /* Define o preenchimento interno do botão */
-    background-color: #007bff; /* Define a cor de fundo do botão */
+    background-color:  #509def22; /* Define a cor de fundo do botão */
     color: #fff; /* Define a cor do texto do botão */
     border: none; /* Remove a borda do botão */
     border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
@@ -91,6 +92,10 @@ buttonToDown {
     position: absolute;
     top: 5%;
     left: 50%;
+    transform: translate(-50%, -50%);
+}
+buttonToDown:hover {
+    background-color: #faa2e02f; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
 
 /*Animações que movem as nuvens, a primeira move
@@ -148,7 +153,18 @@ direita para a esquerda.*/
     }
 }
 
-@keyframes moveToDown {
+@keyframes lessSky{
+    0% {
+        height: 800px;
+    
+    }
+
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes moveButtonToDown {
     0% {
         top: 5%;
     }
@@ -157,11 +173,22 @@ direita para a esquerda.*/
     }
 }
 
-@keyframes moveToUp {
+@keyframes moveButtonToUp {
     0% {
         top:120%;
     }
     100% {
         top: 90%;
+    }
+}
+
+@keyframes moveCloudToUp {
+    0% {
+        top:initial;
+        left:initial;
+    }
+    100% {
+        top:-120%;
+        left:initial;
     }
 }

@@ -51,17 +51,11 @@ function buttonToUp()
 {
     const button = document.querySelector('buttonToUp');
     button.classList.add('buttonToUp');
-    button.style.animation = 'moveToDown 1s ease';
+    button.style.animation = 'moveButtonToDown 1s ease-in';
     button.style.animationFillMode = 'forwards';
-    button.addEventListener('animationend', () => {
-        setTimeout(() => {
-            button.style.animation = 'moveToUp 1s ease'
-            button.textContent = 'Clique aqui para voltar!'; // Adiciona a classe 'infinito' após a conclusão da animação fadeIn
-            button.style.animationFillMode = 'forwards';
-        }, 5000);
-    });
 }
 
+let clickedToUp = false;
 function adicionarEspacoAcima() 
 {
     // Adiciona margem superior ao corpo da página
@@ -86,9 +80,29 @@ function adicionarEspacoAcima()
     {
         createCloudsRight();
     }
+    
+    setTimeout(() => {
+        clickedToUp = true;
+    }, 5000);
 }
 
 function marginToNormal()
 {
+    document.body.style.marginTop = '0px';
 
+    const stars = document.querySelectorAll('.stars');
+    stars.forEach(stars => {
+        stars.parentNode.removeChild(stars);
+    });
+
+    const clouds = document.querySelectorAll('.cloudMain');
+    clouds.forEach(cloud => {
+        cloud.parentNode.removeChild(cloud);
+    });
+
+    const fullSky = document.querySelector('.fullSky');
+    fullSky.style.animation = 'lessSky 2s ease';
+    setTimeout(() => {
+        fullSky.parentNode.removeChild(fullSky);
+    }, 2000);
 }
