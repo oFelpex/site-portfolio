@@ -98,7 +98,7 @@ buttonToDown {
     cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
     transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
     position: absolute;
-    top: 5%;
+    top: 120%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -184,7 +184,7 @@ do nada na tela.*/
 
 
 /*Animações a seguir em processo de mudança.*/
-@keyframes moveButtonToDown {
+@keyframes moveButton1ToDown {
     0% {
         top: 5%;
     }
@@ -192,7 +192,7 @@ do nada na tela.*/
         top: 120%;
     }
 }
-@keyframes moveButtonToUp {
+@keyframes moveButton2ToUp {
     0% {
         top:120%;
     }
@@ -200,13 +200,19 @@ do nada na tela.*/
         top: 90%;
     }
 }
-@keyframes moveCloudToUp {
+@keyframes moveButton2ToInfinite {
     0% {
-        top:initial;
-        left:initial;
+        top:90%;
     }
     100% {
-        top:-120%;
-        left:initial;
+        top: -20%;
+    }
+}
+@keyframes moveButton1ToNormal {
+    0% {
+        top:120%;
+    }
+    100% {
+        top: 5%;
     }
 }

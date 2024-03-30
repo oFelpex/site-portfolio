@@ -55,7 +55,16 @@ function buttonToUp()
 {
     const button = document.querySelector('buttonToUp');
     button.classList.add('buttonToUp');
-    button.style.animation = 'moveButtonToDown 1s ease-in';
+    button.style.animation = 'moveButton1ToDown 1s ease-in';
+    button.style.animationFillMode = 'forwards';
+}
+
+
+function buttonToDown() 
+{
+    const button = document.querySelector('buttonToDown');
+    button.classList.add('buttonToDown');
+    button.style.animation = 'moveButton2ToUp 1s ease-in';
     button.style.animationFillMode = 'forwards';
 }
 
@@ -93,7 +102,7 @@ function adicionarEspacoAcima()
     
     //Adiciona um delay de 5 segundos para tornar clickedToUp true.
     setTimeout(() => {
-        clickedToUp = true;
+        buttonToDown();
     }, 5000);
 }
 
@@ -119,4 +128,16 @@ function marginToNormal()
     setTimeout(() => {
         fullSky.parentNode.removeChild(fullSky);
     }, 2000);
+
+    const button2 = document.querySelector('buttonToDown');
+    button2.classList.add('buttonToDown');
+    button2.style.animation = 'moveButton2ToInfinite 1s ease-in';
+    button2.style.animationFillMode = 'forwards';
+
+    const button1 = document.querySelector('buttonToUp');
+    button1.classList.add('buttonToUp');
+    setTimeout(() => {
+        button1.style.animation = 'moveButton1ToNormal 1.5s ease-in-out';
+        button1.style.animationFillMode = 'forwards';
+    }, 500);
 }
