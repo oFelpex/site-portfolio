@@ -51,35 +51,33 @@ function createStar()
 
 
 //Função para mudar a animação do botão que aciona a função adicionarEspacoAcime().
-function buttonToUp() 
+function buttonToUpTheSky() 
 {
-    const button = document.querySelector('buttonToUp');
-    button.classList.add('buttonToUp');
+    const button = document.querySelector('buttonToUpTheSky');
+    button.classList.add('buttonToUpTheSky');
     button.style.animation = 'moveButton1ToDown 1s ease-in';
     button.style.animationFillMode = 'forwards';
 }
 
 
-function buttonToDown() 
+function buttonToDownTheSky() 
 {
-    const button = document.querySelector('buttonToDown');
-    button.classList.add('buttonToDown');
+    const button = document.querySelector('buttonToDownTheSky');
+    button.classList.add('buttonToDownTheSky');
     button.style.animation = 'moveButton2ToUp 1s ease-in';
     button.style.animationFillMode = 'forwards';
 }
 
 
-//Variável clickedToUp que será importante no futuro.
-let clickedToUp = false;
 /*Função que adiciona margem ao body, além de iniciar algumas outras funções 
-como buttonToUp(), fullSky(), createStar() e, 
-createCloudsLeft e createCloudsRight, além de tornar true a variável clickedToUp.*/
+como buttonToUpTheSky(), fullSky(), createStar() e, 
+createCloudsLeft e createCloudsRight.*/
 function adicionarEspacoAcima() 
 {
     //Adiciona margem superior ao body da página.
     document.body.style.marginTop = '800px';
 
-    buttonToUp();
+    buttonToUpTheSky();
     fullSky();
     
     //Criar i estrelas.
@@ -100,9 +98,9 @@ function adicionarEspacoAcima()
         createCloudsRight();
     }
     
-    //Adiciona um delay de 5 segundos para tornar clickedToUp true.
+    //Adiciona um delay de 5 segundos para executar a função buttontoDownTheSky().
     setTimeout(() => {
-        buttonToDown();
+        buttonToDownTheSky();
     }, 5000);
 }
 
@@ -129,13 +127,13 @@ function marginToNormal()
         fullSky.parentNode.removeChild(fullSky);
     }, 2000);
 
-    const button2 = document.querySelector('buttonToDown');
-    button2.classList.add('buttonToDown');
+    const button2 = document.querySelector('buttonToDownTheSky');
+    button2.classList.add('buttonToDownTheSky');
     button2.style.animation = 'moveButton2ToInfinite 1s ease-in';
     button2.style.animationFillMode = 'forwards';
 
-    const button1 = document.querySelector('buttonToUp');
-    button1.classList.add('buttonToUp');
+    const button1 = document.querySelector('buttonToUpTheSky');
+    button1.classList.add('buttonToUpTheSky');
     setTimeout(() => {
         button1.style.animation = 'moveButton1ToNormal 1.5s ease-in-out';
         button1.style.animationFillMode = 'forwards';

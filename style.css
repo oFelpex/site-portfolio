@@ -68,7 +68,7 @@ a minha foto.*/
 
 
 /*Botão que ao clicar, muda o céu e aumenta a margem do topo.*/
-buttonToUp {
+buttonToUpTheSky {
     padding: 10px 20px; /* Define o preenchimento interno do botão */
     background-color: #007bff; /* Define a cor de fundo do botão */
     color: #fff; /* Define a cor do texto do botão */
@@ -83,13 +83,13 @@ buttonToUp {
     z-index: 999;
 }
 /*Ao passar o mouse em cima...*/
-buttonToUp:hover {
+buttonToUpTheSky:hover {
     background-color: #0056b3; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
 
 
 /*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
-buttonToDown {
+buttonToDownTheSky {
     padding: 10px 20px; /* Define o preenchimento interno do botão */
     background-color:  #509def22; /* Define a cor de fundo do botão */
     color: #fff; /* Define a cor do texto do botão */
@@ -103,7 +103,7 @@ buttonToDown {
     transform: translate(-50%, -50%);
 }
 /*Ao passar o mouse em cima...*/
-buttonToDown:hover {
+buttonToDownTheSky:hover {
     background-color: #faa2e02f; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
 
@@ -183,7 +183,7 @@ do nada na tela.*/
 }
 
 
-/*Animações a seguir em processo de mudança.*/
+/*Animações dos dois botões relacionados ao céu.*/
 @keyframes moveButton1ToDown {
     0% {
         top: 5%;
