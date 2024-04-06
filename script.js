@@ -1,29 +1,19 @@
-//Cria as nuvens da esquerda em locais aleatórios da parte esquerda da tela.
-function createCloudsLeft() 
-{
-    const cloud = document.createElement('div');
-    cloud.classList.add('cloudMain');
-    cloud.style.height = Math.floor(Math.random() * 4) + 'em';
-    cloud.style.top = Math.floor(Math.random() * 700) + 'px';
-    cloud.style.width = Math.floor(Math.random() * 10) + 'em';
-    cloud.style.left = Math.floor(Math.random() * -500) + 'px';
-    cloud.style.animation = animation = 'moveLeftToRight 100s linear infinite';
-    cloud.style.animationDuration = (Math.random() * ((150 - 50)) + 50) + 's';
-    document.body.appendChild(cloud);
-}
-//Cria as nuvens da direita
-function createCloudsRight() 
-{
-    const cloud = document.createElement('div');
-    cloud.classList.add('cloudMain');
-    cloud.style.height = Math.floor(Math.random() * 4) + 'em';
-    cloud.style.top = Math.floor(Math.random() * 700) + 'px';
-    cloud.style.width = Math.floor(Math.random() * 10) + 'em';
-    cloud.style.right = Math.floor(Math.random() * -500) + 'px';
-    cloud.style.animation = 'moveRightToLeft 5s linear infinite';
-    cloud.style.animationDuration = (Math.random() * ((250 - 150)) + 150) + 's';
-
-    document.body.appendChild(cloud);
+//Classe CLoud que serve como base para as nuvens atuais.
+class Cloud {
+    constructor(left, right, animation, animationDuration) {
+        this.cloudElement = document.createElement('div');
+        this.cloudElement.classList.add('cloudMain');
+        this.cloudElement.style.height = Math.floor(Math.random() * 4) + 'em';
+        this.cloudElement.style.top = Math.floor(Math.random() * 700) + 'px';
+        this.cloudElement.style.width = Math.floor(Math.random() * 10) + 'em';
+        this.cloudElement.style.left = left;
+        this.cloudElement.style.right = right;
+        this.cloudElement.style.animation = animation;
+        this.cloudElement.style.animationDuration = animationDuration;
+    }
+    addToBody() {
+        document.body.appendChild(this.cloudElement);
+    }
 }
 
 
@@ -36,17 +26,22 @@ function fullSky()
 }
 
 
-//Função para criar estrelas em locais aleatórios da tela.
-function createStar() 
-{
-    const star = document.createElement('div');
-    star.classList.add('stars');
-    star.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
-    star.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
-    star.addEventListener('animationend', () => {
-        star.style.animation = 'rotate 6s ease infinite'; // Adiciona a classe 'infinito' após a conclusão da animação fadeIn
-    });
-    document.body.appendChild(star);
+//Classe base para criar estrelas em locais e tamanhos variados.
+class Star {
+    constructor(left, top, size) {
+        this.starElement = document.createElement('div');
+        this.starElement.classList.add('stars');
+        this.starElement.style.left = left;
+        this.starElement.style.top = top;
+        this.starElement.style.height = size;
+        this.starElement.style.width = size;
+        this.starElement.addEventListener('animationend', () => {
+            this.starElement.style.animation = 'rotate 6s ease infinite'; //Adiciona animação rotate após a animação fadeIn acabar
+        });
+    }
+    addToBody() {
+        document.body.appendChild(this.starElement);
+    }
 }
 
 
@@ -81,21 +76,38 @@ function adicionarEspacoAcima()
     fullSky();
     
     //Criar i estrelas.
-    for (let i = 0; i < 7; i++) 
+    for (let i = 0; i < 13; i++) 
     {
-        createStar();
+        const stars = new Star(
+            Math.floor(Math.random() * window.innerWidth) + 'px',
+            Math.floor(Math.random() * (window.innerHeight / 1.7)) + 'px',
+            Math.floor(Math.random() * 4) + 'px'
+        );
+        stars.addToBody();
     }
 
-    /*Dois for's, cada uma para uma função de nuvem
-    diferente, sendo o primeiro para as nuvens da esquerda
-    e o segundo para as nuvens da direita*/
+    /*Dois for's, um para cada uso da classe Cloud, 
+    sendo o primeiro para criar as nuvens da esquerda
+    e o segundo para criar as nuvens da direita*/
     for (let i = 0; i < 8; i++) 
     {
-        createCloudsLeft();
+        const cloudLeft = new Cloud(
+            Math.floor(Math.random() * -500) + 'px',
+            500,
+            'moveLeftToRight 100s linear infinite',
+            (Math.random() * ((150 - 50)) + 50) + 's'
+        );
+        cloudLeft.addToBody();
     }
     for (let i = 0; i < 2; i++) 
     {
-        createCloudsRight();
+        const cloudRight = new Cloud(
+            500,
+            Math.floor(Math.random() * -500) + 'px',
+            'moveRightToLeft 5s linear infinite',
+            (Math.random() * ((250 - 150)) + 150) + 's'
+        );
+        cloudRight.addToBody();
     }
     
     //Adiciona um delay de 5 segundos para executar a função buttontoDownTheSky().
@@ -103,6 +115,7 @@ function adicionarEspacoAcima()
         buttonToDownTheSky();
     }, 5000);
 }
+
 
 /*Função que volta a margem ao padrão (0px), e 
 além de remover as estrelas e as núvens, 
