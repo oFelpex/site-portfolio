@@ -12,14 +12,14 @@
 /*Céu gradiente.*/
 .sky {
     width: 100%;
-    height: 300px;
+    height: 500px;
     top: 300px;
     background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
     transition: height 0.5s ease;
 }
 
 
-/*Céu completo*/
+/*Céu de cima completo*/
 .fullSky {
     width: 100%;
     height: 0px;
@@ -27,7 +27,29 @@
     animation: moreSky 2s ease;
     animation-fill-mode: forwards;
     position: absolute;
-    background: linear-gradient(hsl(241, 100%, 12%), hsla(240, 75%, 75%, .6));
+    background: linear-gradient(hsl(241, 100%, 9%), hsla(240, 75%, 75%, .6));
+}
+/*Animação que aumenta o height do fullSky para que preencha da tela.*/
+@keyframes moreSky{
+    0% {
+        height: 0px;
+    
+    }
+
+    100% {
+        height: 800px;
+    }
+}
+/*Animação que é o oposto da moreSky, diminuindo o height.*/
+@keyframes lessSky{
+    0% {
+        height: 800px;
+    
+    }
+
+    100% {
+        height: 0px;
+    }
 }
 
 
@@ -38,7 +60,7 @@ a minha foto.*/
     height: 250px;
     background: rgb(255, 255, 255);
     border-radius: 50%;
-    transform: translate(-200%, -50%);
+    transform: translate(-200%, -140%);
 }
 
 
@@ -51,59 +73,6 @@ a minha foto.*/
     position: absolute;
     filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
 }
-
-
-/*Classe base para as estrelas.*/
-.stars {
-    background: rgb(255, 255, 255);
-    opacity: 0;
-    position: absolute;
-    animation: fadeIn 2s ease-in;
-    opacity: 100;
-}
-
-
-/*Botão que ao clicar, muda o céu e aumenta a margem do topo.*/
-buttonToUpTheSky {
-    padding: 10px 20px; /* Define o preenchimento interno do botão */
-    background-color: #007bff; /* Define a cor de fundo do botão */
-    color: #fff; /* Define a cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
-    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-}
-/*Ao passar o mouse em cima...*/
-buttonToUpTheSky:hover {
-    background-color: #0056b3; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
-}
-
-
-/*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
-buttonToDownTheSky {
-    padding: 10px 20px; /* Define o preenchimento interno do botão */
-    background-color:  #509def22; /* Define a cor de fundo do botão */
-    color: #fff; /* Define a cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
-    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-/*Ao passar o mouse em cima...*/
-buttonToDownTheSky:hover {
-    background-color: #faa2e02f; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
-}
-
-
 /*Animações que movem as nuvens, a primeira move
 as nuvens da esquerda para a direita e a segunda da
 direita para a esquerda.*/
@@ -125,6 +94,24 @@ direita para a esquerda.*/
 }
 
 
+/*Classe base para as estrelas.*/
+.stars {
+    background: rgb(255, 255, 255);
+    opacity: 0;
+    position: absolute;
+    animation: fadeIn 2s ease-in;
+    opacity: 100;
+}
+/*Animação que muda a opacidade das estrelas, para não aparecerem 
+do nada na tela.*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Opacidade inicial */
+    }
+    100% {
+        opacity: 0.9; /* Opacidade final */
+    }
+}
 /*Animação apenas para rotacionar as estrelinhas.*/
 @keyframes rotate {
     0% {
@@ -137,46 +124,45 @@ direita para a esquerda.*/
 }
 
 
-/*Animação que muda a opacidade das estrelas, para não aparecerem 
-do nada na tela.*/
-@keyframes fadeIn {
-    0% {
-        opacity: 0; /* Opacidade inicial */
-    }
-    100% {
-        opacity: 0.9; /* Opacidade final */
-    }
+/*Botão que ao clicar, muda o céu e aumenta a margem do topo.*/
+buttonToUpTheSky {
+    padding: 10px 20px; /* Define o preenchimento interno do botão */
+    background-color: hsla(240, 98%, 83%, 0.288); /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
+    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }
-
-
-/*Animação que aumenta o height do fullSky para que preencha da tela.*/
-@keyframes moreSky{
-    0% {
-        height: 0px;
-    
-    }
-
-    100% {
-        height: 800px;
-    }
+/*Ao passar o mouse em cima...*/
+buttonToUpTheSky:hover {
+    background-color: #002954ba; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
-
-
-/*Animação que é o oposto da moreSky, diminuindo o height.*/
-@keyframes lessSky{
-    0% {
-        height: 800px;
-    
-    }
-
-    100% {
-        height: 0px;
-    }
+/*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
+buttonToDownTheSky {
+    padding: 10px 20px; /* Define o preenchimento interno do botão */
+    background-color:  #509def22; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
+    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-
+/*Ao passar o mouse em cima...*/
+buttonToDownTheSky:hover {
+    background-color: #faa2e02f; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
+}
 /*Animações dos dois botões relacionados ao céu.*/
-@keyframes moveButton1ToDown {
+@keyframes moveButton_CLIQUE_AQUI_ToDown {
     0% {
         top: 5%;
     }
@@ -184,7 +170,7 @@ do nada na tela.*/
         top: 120%;
     }
 }
-@keyframes moveButton2ToUp {
+@keyframes moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToUp {
     0% {
         top:120%;
     }
@@ -192,7 +178,7 @@ do nada na tela.*/
         top: 90%;
     }
 }
-@keyframes moveButton2ToInfinite {
+@keyframes moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToInfinite {
     0% {
         top:90%;
     }
@@ -200,7 +186,7 @@ do nada na tela.*/
         top: -20%;
     }
 }
-@keyframes moveButton1ToNormal {
+@keyframes moveButton_CLIQUE_AQUI_ToNormal {
     0% {
         top:120%;
     }
