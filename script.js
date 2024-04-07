@@ -52,6 +52,10 @@ function buttonToUpTheSky()
     button.classList.add('buttonToUpTheSky');
     button.style.animation = 'moveButton_CLIQUE_AQUI_ToDown 1s ease-in';
     button.style.animationFillMode = 'forwards';
+    setTimeout(() => {
+        button.style.display = 'none';
+    }, 2000);
+    
 }
 function buttonToDownTheSky() 
 {
@@ -59,6 +63,7 @@ function buttonToDownTheSky()
     button.classList.add('buttonToDownTheSky');
     button.style.animation = 'moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToUp 1s ease-in';
     button.style.animationFillMode = 'forwards';
+    button.style.display = 'block';
 }
 
 
@@ -70,6 +75,10 @@ function increaseTheTopMargin()
     //Adiciona margem superior ao body da página.
     document.body.style.marginTop = '800px';
 
+    const noScroll = document.querySelector('*');
+    noScroll.classList.add('*');
+    noScroll.style.overflow = 'hidden';
+    
     buttonToUpTheSky();
     fullSky();
     
@@ -101,7 +110,7 @@ function increaseTheTopMargin()
     {
         const cloudRight = new Cloud(
             500,
-            Math.floor(Math.random() * -500) + 'px',
+            Math.floor(Math.random() * 500) + 'px',
             'moveRightToLeft 5s linear infinite',
             (Math.random() * ((250 - 150)) + 150) + 's'
         );
@@ -122,6 +131,10 @@ function marginToNormal()
 {
     document.body.style.marginTop = '0px';
 
+    const noScroll = document.querySelector('*');
+    noScroll.classList.add('*');
+    noScroll.style.overflow = 'auto';
+
     const stars = document.querySelectorAll('.stars');
     stars.forEach(stars => {
         stars.parentNode.removeChild(stars);
@@ -138,15 +151,17 @@ function marginToNormal()
         fullSky.parentNode.removeChild(fullSky);
     }, 2000);
 
-    const button2 = document.querySelector('buttonToDownTheSky');
-    button2.classList.add('buttonToDownTheSky');
-    button2.style.animation = 'moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToInfinite 1s ease-in';
-    button2.style.animationFillMode = 'forwards';
+    const button_CLIQUE_AQUI_PARA_VOLTAR = document.querySelector('buttonToDownTheSky');
+    button_CLIQUE_AQUI_PARA_VOLTAR.classList.add('buttonToDownTheSky');
+    button_CLIQUE_AQUI_PARA_VOLTAR.style.animation = 'moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToInfinite 1s ease-in';
+    button_CLIQUE_AQUI_PARA_VOLTAR.style.animationFillMode = 'forwards';
+    button_CLIQUE_AQUI_PARA_VOLTAR.style.display = 'none';
 
-    const button1 = document.querySelector('buttonToUpTheSky');
-    button1.classList.add('buttonToUpTheSky');
+    const button_CLIQUE_AQUI = document.querySelector('buttonToUpTheSky');
+    button_CLIQUE_AQUI.classList.add('buttonToUpTheSky');
     setTimeout(() => {
-        button1.style.animation = 'moveButton_CLIQUE_AQUI_ToNormal 1.5s ease-in-out';
-        button1.style.animationFillMode = 'forwards';
+        button_CLIQUE_AQUI.style.animation = 'moveButton_CLIQUE_AQUI_ToNormal 1.5s ease-in-out';
+        button_CLIQUE_AQUI.style.animationFillMode = 'forwards';
+        button_CLIQUE_AQUI.style.display = 'block';
     }, 500);
 }
