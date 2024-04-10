@@ -77,8 +77,6 @@
 }
 
 
-
-
 /*Classe que serve de base para as nuvens.*/
 .cloudMain {
     background-color: #fff;
@@ -141,13 +139,13 @@ do nada na tela.*/
 
 /*Botão que ao clicar, muda o céu e aumenta a margem do topo.*/
 buttonToUpTheSky {
-    padding: 10px 20px; /* Define o preenchimento interno do botão */
-    background-color: hsla(240, 98%, 83%, 0.288); /* Define a cor de fundo do botão */
-    color: #fff; /* Define a cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
-    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
+    padding: 10px 20px;
+    background-color: hsla(240, 98%, 83%, 0.288);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     position: absolute;
     top: 5%;
     left: 50%;
@@ -161,13 +159,13 @@ buttonToUpTheSky:hover {
 /*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
 buttonToDownTheSky {
     display: none;
-    padding: 10px 20px; /* Define o preenchimento interno do botão */
-    background-color:  #509def22; /* Define a cor de fundo do botão */
-    color: #fff; /* Define a cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Adiciona bordas arredondadas ao botão */
-    cursor: pointer; /* Altera o cursor do mouse para um ponteiro ao passar sobre o botão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor de fundo */
+    padding: 10px 20px;
+    background-color:  #509def22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     position: absolute;
     top: 120%;
     left: 50%;
