@@ -76,6 +76,10 @@
     object-fit: cover;
 }
 
+/*Adicionar ícones do GitHub, Discord, Linkedin e Zap Zap*/
+/*LEMBRETE*
+AO COLOCAR O ÍCONE DO ZAP: AO PASSAR O MOUSE EM CIMA, 
+ABRIR UMA BANDEJA COM O MEU NÚMERO.*/
 
 /*Classe que serve de base para as nuvens.*/
 .cloudMain {
