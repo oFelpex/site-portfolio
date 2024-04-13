@@ -79,6 +79,11 @@ function increaseTheTopMargin()
     noScroll.classList.add('*');
     noScroll.style.overflow = 'hidden';
     
+    const textBalloon = document.querySelector('.textBalloon');
+    textBalloon.classList.add('textBalloon');
+    textBalloon.style.animation = 'fromNormalToDown 2s ease-in-out';
+    textBalloon.style.animationFillMode = 'forwards';
+
     buttonToUpTheSky();
     fullSky();
     
@@ -134,6 +139,12 @@ function marginToNormal()
     const noScroll = document.querySelector('*');
     noScroll.classList.add('*');
     noScroll.style.overflow = 'auto';
+
+        const textBalloon = document.querySelector('.textBalloon');
+        textBalloon.classList.add('textBalloon');
+        textBalloon.style.animation = 'fromDownToNormal 2s ease-in-out';
+        textBalloon.style.animationFillMode = 'forwards';
+
 
     const stars = document.querySelectorAll('.stars');
     stars.forEach(stars => {

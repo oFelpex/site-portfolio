@@ -1,5 +1,5 @@
 *{
-    font-family: Inter, sans-serif;
+    font-family: sans-serif;
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
@@ -200,14 +200,79 @@ buttonToDownTheSky:hover {
     }
 }
 
-.textBalloons {
+
+.allTextBalloons {
     position: relative;
-    transform: translate(-200%, -700%);
+    transform: translate(0%, -75%);
+    height: 760px;
+    width: 830px;
+    background: none;
+}
+.textBalloon {
+    position: absolute;
+    padding: 0;
+    top:0;
+    left:0;
     height: 60px;
     width: 130px;
-    padding: 10px;
     border-radius: 50px;
-    
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
-    background-color: rgb(245, 245, 245);
+    background: rgb(245, 245, 245);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
+.textBalloon1 {
+    top: 25%;
+    left: 10%;
+    height: 80px;
+    width: 140px;
+}
+.textBalloon2 {
+    top: 50%;
+    left: 5%;
+    
+}
+.textBalloon3 {
+    top: 75%;
+    left: 15%;
+    
+}
+.textBalloon4 {
+    top: 25%;
+    left: 69%;
+    
+}
+.textBalloon5 {
+    top: 50%;
+    left: 79%;
+    
+}
+.textBalloon6 {
+    top: 75%;
+    left: 69%;
+    
+}
+
+
+@keyframes fromNormalToDown {
+    100%{
+        top: -20px;
+    }
+}
+@keyframes fromDownToNormal {
+    0%{
+        top:-20px
+    }
+    100%{
+        top: -400px;
+    }
+}
+
+
