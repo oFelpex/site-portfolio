@@ -13,7 +13,7 @@ class Cloud {
         this.cloudElement = document.createElement('div');
         this.cloudElement.classList.add('cloudMain');
         this.cloudElement.style.height = Math.floor(Math.random() * 4) + 'em';
-        this.cloudElement.style.top = Math.floor(Math.random() * 700) + 'px';
+        this.cloudElement.style.top = Math.floor(Math.random() * (window.innerHeight-100)) + 'px';
         this.cloudElement.style.width = Math.floor(Math.random() * 10) + 'em';
         this.cloudElement.style.left = left;
         this.cloudElement.style.right = right;
@@ -54,7 +54,7 @@ class TextBalloon {
         this.textBalloonElement.style.height = height;
         this.textBalloonElement.style.width = width;
         this.textBalloonElement.textContent = textContent;
-        this.textBalloonElement.style.fontFamily = 'Arial, sans-serif';
+        this.textBalloonElement.style.fontFamily = 'Arial';
         this.textBalloonElement.style.fontSize = '20px';
         
     }
@@ -65,42 +65,42 @@ class TextBalloon {
 function textBalloon()
 {
     const textBalloon1 = new TextBalloon(
-        -400 + 'px',
+        -1100 + 'px',
         -250 +'px',
         80 + 'px',
         140 + 'px',
         'teste1'
     );
     const textBalloon2 = new TextBalloon(
-        -300 + 'px',
+        -1000 + 'px',
         -300 +'px',
         80 + 'px',
         140 + 'px',
         'teste2'
     );
     const textBalloon3 = new TextBalloon(
-        -200 + 'px',
+        -900 + 'px',
         -250 +'px',
         80 + 'px',
         140 + 'px',
         'teste3'
     );
     const textBalloon4 = new TextBalloon(
-        -640 + 'px',
+        -1340 + 'px',
         250 +'px',
         80 + 'px',
         140 + 'px',
         'teste4'
     );
     const textBalloon5 = new TextBalloon(
-        -540 + 'px',
+        -1240 + 'px',
         300 +'px',
         80 + 'px',
         140 + 'px',
         'teste5'
     );
     const textBalloon6 = new TextBalloon(
-        -440 + 'px',
+        -1140 + 'px',
         250 +'px',
         80 + 'px',
         140 + 'px',
@@ -146,7 +146,7 @@ createCloudsLeft e createCloudsRight.*/
 function increaseTheTopMargin() 
 {
     //Adiciona margem superior ao body da página.
-    document.body.style.marginTop = '800px';
+    document.body.style.marginTop = '1000px';
 
     const noScroll = document.querySelector('*');
     noScroll.classList.add('*');
