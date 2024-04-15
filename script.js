@@ -45,6 +45,78 @@ class Star {
 }
 
 
+class TextBalloon {
+    constructor(top, left, height, width, textContent) {
+        this.textBalloonElement = document.createElement('div');
+        this.textBalloonElement.classList.add('textBalloon');
+        this.textBalloonElement.style.top = top;
+        this.textBalloonElement.style.left = left;
+        this.textBalloonElement.style.height = height;
+        this.textBalloonElement.style.width = width;
+        this.textBalloonElement.textContent = textContent;
+        this.textBalloonElement.style.fontFamily = 'Arial, sans-serif';
+        this.textBalloonElement.style.fontSize = '20px';
+        
+    }
+    addToBody() {
+        document.body.appendChild(this.textBalloonElement);
+    }
+}
+function textBalloon()
+{
+    const textBalloon1 = new TextBalloon(
+        -400 + 'px',
+        -250 +'px',
+        80 + 'px',
+        140 + 'px',
+        'teste1'
+    );
+    const textBalloon2 = new TextBalloon(
+        -300 + 'px',
+        -300 +'px',
+        80 + 'px',
+        140 + 'px',
+        'teste2'
+    );
+    const textBalloon3 = new TextBalloon(
+        -200 + 'px',
+        -250 +'px',
+        80 + 'px',
+        140 + 'px',
+        'teste3'
+    );
+    const textBalloon4 = new TextBalloon(
+        -640 + 'px',
+        250 +'px',
+        80 + 'px',
+        140 + 'px',
+        'teste4'
+    );
+    const textBalloon5 = new TextBalloon(
+        -540 + 'px',
+        300 +'px',
+        80 + 'px',
+        140 + 'px',
+        'teste5'
+    );
+    const textBalloon6 = new TextBalloon(
+        -440 + 'px',
+        250 +'px',
+        80 + 'px',
+        140 + 'px',
+        'teste6'
+    );
+    textBalloon1.addToBody();
+    textBalloon2.addToBody();
+    textBalloon3.addToBody();
+    textBalloon4.addToBody();
+    textBalloon5.addToBody();
+    textBalloon6.addToBody();
+}
+textBalloon();
+
+
+
 //Função para mudar a animação do botão que aciona a função adicionarEspacoAcime().
 function buttonToUpTheSky() 
 {
@@ -67,6 +139,7 @@ function buttonToDownTheSky()
 }
 
 
+
 /*Função que adiciona margem ao body, além de iniciar algumas outras funções 
 como buttonToUpTheSky(), fullSky(), createStar() e, 
 createCloudsLeft e createCloudsRight.*/
@@ -79,10 +152,6 @@ function increaseTheTopMargin()
     noScroll.classList.add('*');
     noScroll.style.overflow = 'hidden';
     
-    const textBalloon = document.querySelector('.textBalloon');
-    textBalloon.classList.add('textBalloon');
-    textBalloon.style.animation = 'fromNormalToDown 2s ease-in-out';
-    textBalloon.style.animationFillMode = 'forwards';
 
     buttonToUpTheSky();
     fullSky();
@@ -139,12 +208,6 @@ function marginToNormal()
     const noScroll = document.querySelector('*');
     noScroll.classList.add('*');
     noScroll.style.overflow = 'auto';
-
-        const textBalloon = document.querySelector('.textBalloon');
-        textBalloon.classList.add('textBalloon');
-        textBalloon.style.animation = 'fromDownToNormal 2s ease-in-out';
-        textBalloon.style.animationFillMode = 'forwards';
-
 
     const stars = document.querySelectorAll('.stars');
     stars.forEach(stars => {
