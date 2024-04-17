@@ -129,13 +129,17 @@ function upArrow()
     }, 2000);
     
 }
-function buttonToDownTheSky() 
+function downArrow() 
 {
-    const button = document.querySelector('buttonToDownTheSky');
-    button.classList.add('buttonToDownTheSky');
-    button.style.animation = 'moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToUp 1s ease-in';
-    button.style.animationFillMode = 'forwards';
-    button.style.display = 'block';
+    const downArrow = document.querySelector('.downArrow');
+    downArrow.classList.add('downArrow');
+    downArrow.style.animation = 'move_downArrow_ToUp 1s ease-in';
+    downArrow.style.animationFillMode = 'forwards';
+    downArrow.style.display = 'block';
+    setTimeout(() => {
+        downArrow.style.animation = 'downArrowIdle 2s ease-in-out infinite';
+        
+    }, 1000);
 }
 
 
@@ -193,7 +197,7 @@ function increaseTheTopMargin()
     
     //Adiciona um delay de 5 segundos para executar a função buttontoDownTheSky().
     setTimeout(() => {
-        buttonToDownTheSky();
+        downArrow();
     }, 5000);
 }
 
@@ -225,11 +229,14 @@ function marginToNormal()
         fullSky.parentNode.removeChild(fullSky);
     }, 2000);
 
-    const button_CLIQUE_AQUI_PARA_VOLTAR = document.querySelector('buttonToDownTheSky');
-    button_CLIQUE_AQUI_PARA_VOLTAR.classList.add('buttonToDownTheSky');
-    button_CLIQUE_AQUI_PARA_VOLTAR.style.animation = 'moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToInfinite 1s ease-in';
-    button_CLIQUE_AQUI_PARA_VOLTAR.style.animationFillMode = 'forwards';
-    button_CLIQUE_AQUI_PARA_VOLTAR.style.display = 'none';
+    const downArrow = document.querySelector('.downArrow');
+    downArrow.classList.add('downArrow');
+    downArrow.style.animation = 'move_downArrow_ToInfinite 1s ease-in';
+    downArrow.style.animationFillMode = 'forwards';
+    setTimeout(() => {
+        downArrow.style.display = 'none';
+    }, 1500)
+    
 
     const upArrow = document.querySelector('.upArrow');
     upArrow.classList.add('upArrow');

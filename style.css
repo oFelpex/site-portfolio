@@ -157,26 +157,6 @@ do nada na tela.*/
         transform: translate(50%, 50%);
       }
 }
-/*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
-buttonToDownTheSky {
-    display: none;
-    padding: 10px 20px;
-    background-color:  #509def22;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-/*Ao passar o mouse em cima...*/
-buttonToDownTheSky:hover {
-    background-color: #faa2e02f; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
-}
-/*Animações dos dois botões relacionados ao céu.*/
 @keyframes move_upArrow_ToDown {
     0% {
         top: 3%;
@@ -193,7 +173,23 @@ buttonToDownTheSky:hover {
         top: 3%;
     }
 }
-@keyframes moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToUp {
+/*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
+.downArrow {
+    height: 60px;
+    opacity: 40%;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: none;
+}
+.downArrow:hover {
+    opacity: 80%;
+    height: 65px;
+}
+@keyframes move_downArrow_ToUp {
     0% {
         top:120%;
     }
@@ -201,7 +197,18 @@ buttonToDownTheSky:hover {
         top: 90%;
     }
 }
-@keyframes moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToInfinite {
+@keyframes downArrowIdle {
+    0% {
+        transform: translate(-50%, 50%);
+      }
+      50% {
+        transform: translate(-50%, 60%);
+      }
+      100% {
+        transform: translate(-50%, 50%);
+      }
+}
+@keyframes move_downArrow_ToInfinite {
     0% {
         top:90%;
     }
@@ -246,9 +253,27 @@ buttonToDownTheSky:hover {
     width: 60%;
     border-radius: 50px;
 
-    background: linear-gradient(hsla(170, 96%, 29%, 0.747), hsl(170, 99%, 31%));
+    background: linear-gradient(rgb(124, 75, 156), rgb(98, 51, 129));
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
     
+}
+
+.baseboard {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    transform: translate(0%, 175%);
+    background: rgb(48, 48, 48);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: "Arial";
+    font-optical-sizing: auto;
+    font-size: 24px;
+    color: white;
 }
 
 
