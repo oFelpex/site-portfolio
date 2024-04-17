@@ -118,14 +118,14 @@ textBalloon();
 
 
 //Função para mudar a animação do botão que aciona a função adicionarEspacoAcime().
-function buttonToUpTheSky() 
+function upArrow() 
 {
-    const button = document.querySelector('buttonToUpTheSky');
-    button.classList.add('buttonToUpTheSky');
-    button.style.animation = 'moveButton_CLIQUE_AQUI_ToDown 1s ease-in';
-    button.style.animationFillMode = 'forwards';
+    const upArrow = document.querySelector('.upArrow');
+    upArrow.classList.add('upArrow');
+    upArrow.style.animation = 'move_upArrow_ToDown 1s ease-in';
+    upArrow.style.animationFillMode = 'forwards';
     setTimeout(() => {
-        button.style.display = 'none';
+        upArrow.style.display = 'none';
     }, 2000);
     
 }
@@ -153,7 +153,7 @@ function increaseTheTopMargin()
     noScroll.style.overflow = 'hidden';
     
 
-    buttonToUpTheSky();
+    upArrow();
     fullSky();
     
     //Criar i estrelas.
@@ -231,11 +231,14 @@ function marginToNormal()
     button_CLIQUE_AQUI_PARA_VOLTAR.style.animationFillMode = 'forwards';
     button_CLIQUE_AQUI_PARA_VOLTAR.style.display = 'none';
 
-    const button_CLIQUE_AQUI = document.querySelector('buttonToUpTheSky');
-    button_CLIQUE_AQUI.classList.add('buttonToUpTheSky');
+    const upArrow = document.querySelector('.upArrow');
+    upArrow.classList.add('upArrow');
     setTimeout(() => {
-        button_CLIQUE_AQUI.style.animation = 'moveButton_CLIQUE_AQUI_ToNormal 1.5s ease-in-out';
-        button_CLIQUE_AQUI.style.animationFillMode = 'forwards';
-        button_CLIQUE_AQUI.style.display = 'block';
+        upArrow.style.animation = 'move_upArrow_ToNormal 1.5s ease-in-out';
+        upArrow.style.animationFillMode = 'forwards';
+        upArrow.style.display = 'block';
+        setTimeout(() => {
+            upArrow.style.animation = 'upArrowIdle 2s ease-in-out infinite';
+        }, 1500);
     }, 500);
 }

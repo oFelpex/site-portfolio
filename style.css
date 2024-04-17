@@ -130,23 +130,32 @@ do nada na tela.*/
 
 
 /*Botão que ao clicar, muda o céu e aumenta a margem do topo.*/
-buttonToUpTheSky {
-    padding: 10px 20px;
-    background-color: hsla(240, 98%, 83%, 0.288);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+.upArrow {
+    height: 60px;
+    rotate: 180deg;
+    opacity: 40%;
+    background: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
+    transform: translate(50%, 50%);
+    animation: upArrowIdle 2s ease-in-out infinite;
 }
-/*Ao passar o mouse em cima...*/
-buttonToUpTheSky:hover {
-    background-color: #002954ba; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
+.upArrow:hover {
+    opacity: 80%;
+    height: 65px;
+}
+@keyframes upArrowIdle {
+    0% {
+        transform: translate(50%, 50%);
+      }
+      50% {
+        transform: translate(50%, 60%);
+      }
+      100% {
+        transform: translate(50%, 50%);
+      }
 }
 /*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
 buttonToDownTheSky {
@@ -168,12 +177,20 @@ buttonToDownTheSky:hover {
     background-color: #faa2e02f; /* Altera a cor de fundo do botão ao passar o mouse sobre ele */
 }
 /*Animações dos dois botões relacionados ao céu.*/
-@keyframes moveButton_CLIQUE_AQUI_ToDown {
+@keyframes move_upArrow_ToDown {
     0% {
-        top: 5%;
+        top: 3%;
     }
     100% {
         top: 120%;
+    }
+}
+@keyframes move_upArrow_ToNormal {
+    0% {
+        top:120%;
+    }
+    100% {
+        top: 3%;
     }
 }
 @keyframes moveButton_CLIQUE_AQUI_PARA_VOLTAR_ToUp {
@@ -192,14 +209,7 @@ buttonToDownTheSky:hover {
         top: -20%;
     }
 }
-@keyframes moveButton_CLIQUE_AQUI_ToNormal {
-    0% {
-        top:120%;
-    }
-    100% {
-        top: 5%;
-    }
-}
+
 
 
 .textBalloon {
@@ -218,7 +228,15 @@ buttonToDownTheSky:hover {
     font-optical-sizing: auto;
     font-style: normal;
 }
-
+/*.textBalloon:hover{
+    animation: growTextBalloon 0.25s linear forwards;
+}
+@keyframes growTextBalloon {
+    100%{
+        
+        width: 190px;
+    }
+}*/
 
 .bannerWithMyProjects {
     position: relative;
