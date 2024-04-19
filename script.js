@@ -46,7 +46,7 @@ class Star {
 
 
 class TextBalloon {
-    constructor(top, left, height, width, textContent) {
+    constructor(top, left, height, width, textContent, borderRadius, gmail) {
         this.textBalloonElement = document.createElement('div');
         this.textBalloonElement.classList.add('textBalloon');
         this.textBalloonElement.style.top = top;
@@ -56,12 +56,38 @@ class TextBalloon {
         this.textBalloonElement.textContent = textContent;
         this.textBalloonElement.style.fontFamily = 'Arial';
         this.textBalloonElement.style.fontSize = '20px';
+        this.textBalloonElement.style.borderRadius = borderRadius;
         
-    }
+        if(gmail) {
+            let animou = false;
+            let dentro = false;
+            gmail = document.querySelector('.overlay_gmail');
+            gmail.addEventListener('mouseenter', () => {
+                animou = false;
+                dentro = true;
+                this.textBalloonElement.classList.remove('animationForGmail_mouseIsOut');
+                this.textBalloonElement.classList.add('animationForGmail_mouseIsIn');
+                this.textBalloonElement.addEventListener('animationend', () => {
+                    animou = true;
+                });
+            });
+            
+            gmail.addEventListener('mouseleave', () => {
+                this.textBalloonElement.classList.remove('animationForGmail_mouseIsIn');
+                if(dentro == true && animou == true) {
+                    this.textBalloonElement.classList.add('animationForGmail_mouseIsOut');
+                }
+                dentro = false;
+                animou = false;
+                });
+            }
+        }
     addToBody() {
         document.body.appendChild(this.textBalloonElement);
     }
 }
+
+
 function textBalloon()
 {
     const textBalloon1 = new TextBalloon(
@@ -71,6 +97,7 @@ function textBalloon()
         140 + 'px',
         'teste1'
     );
+    
     const textBalloon2 = new TextBalloon(
         -1000 + 'px',
         -300 +'px',
@@ -78,27 +105,39 @@ function textBalloon()
         140 + 'px',
         'teste2'
     );
+
+    //Github
     const textBalloon3 = new TextBalloon(
         -900 + 'px',
-        -250 +'px',
-        80 + 'px',
-        140 + 'px',
-        'teste3'
+        -245 +'px',
+        100 + 'px',
+        100 + 'px',
+
     );
+
+    //Linkedin
     const textBalloon4 = new TextBalloon(
         -1340 + 'px',
         250 +'px',
-        80 + 'px',
-        140 + 'px',
-        'teste4'
+        100 + 'px',
+        100 + 'px',
+
     );
+
+    //Gmail
     const textBalloon5 = new TextBalloon(
         -1240 + 'px',
         300 +'px',
         80 + 'px',
-        140 + 'px',
-        'teste5'
+        95 + 'px',
+        '',
+        10+'px',
+        true
+        
     );
+    
+    
+    //Whatsapp
     const textBalloon6 = new TextBalloon(
         -1140 + 'px',
         250 +'px',
@@ -110,8 +149,12 @@ function textBalloon()
     textBalloon2.addToBody();
     textBalloon3.addToBody();
     textBalloon4.addToBody();
+   
     textBalloon5.addToBody();
     textBalloon6.addToBody();
+
+    
+    
 }
 textBalloon();
 
