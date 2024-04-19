@@ -52,95 +52,7 @@
 }
 
 
-.myPhoto {
-    position: absolute;
-    
-    left: 50%;
-    transform: translate(-50%, -100%);
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
-    border-radius: 50%;
-    filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
-}
 
-
-.icon_github {
-    position: absolute;
-    height: 85px;
-    
-    left: 50%;
-    transform: translate(-338%, -40%);
-    z-index: 1;
-
-    background: none;
-    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.26));
-}
-.icon_linkedin {
-    position: absolute;
-    height: 85px;
-    
-    left: 50%;
-    transform: translate(245%, -438%);
-    z-index: 1;
-
-    background: none;
-    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.26));
-}
-.icon_gmail {
-    position: absolute;
-    height: 85px;
-    
-    left: 50%;
-    transform: translate(303%, -215%);
-    z-index: 1;
-
-    background: none;
-    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.26));
-}
-.overlay_gmail {
-    position: absolute;
-    height: 80px;
-    width: 90px;
-    left: 50%;
-    transform: translate(282%, -225%);
-    background: none;
-    z-index: 2;
-}
-.overlay_gmail:hover {
-    width: 300px;
-    transform: translate(75%, -225%);
-}
-.animationForGmail_mouseIsIn {
-    animation: animationWhenTheMouseIsInGmailIcon 1s ease-in-out forwards;
-}
-.animationForGmail_mouseIsOut {
-    animation: animationWhenTheMouseLeaveTheGmailIcon 1s ease-in-out forwards;
-}
-@keyframes animationWhenTheMouseIsInGmailIcon {
-    0%{
-        width: 95px;
-    }
-    100%{
-        width: 300px;
-        left: 25%;
-    }
-}
-@keyframes animationWhenTheMouseLeaveTheGmailIcon {
-    0%{
-        width: 300px;
-        left: 25%;
-    }
-    100%{
-        width: 95px;
-        left: 19.7%;
-    }
-    
-}
-/*Adicionar ícones do GitHub, Discord, Linkedin e Zap Zap*/
-/*LEMBRETE*
-AO COLOCAR O ÍCONE DO ZAP: AO PASSAR O MOUSE EM CIMA, 
-ABRIR UMA BANDEJA COM O MEU NÚMERO.*/
 
 
 .cloudMain {
@@ -186,7 +98,15 @@ do nada na tela.*/
         opacity: 0; /* Opacidade inicial */
     }
     100% {
-        opacity: 0.9; /* Opacidade final */
+        opacity: 1; /* Opacidade final */
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 /*Animação apenas para rotacionar as estrelinhas.*/
@@ -290,12 +210,12 @@ do nada na tela.*/
 }
 
 
-
 .textBalloon {
     position: relative;
     border-radius: 50px;
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
     background: rgb(245, 245, 245);
+    
     
 
     display: flex;
@@ -317,6 +237,100 @@ do nada na tela.*/
     }
 }*/
 
+.myPhoto {
+    position: absolute;
+    
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
+    border-radius: 50%;
+    filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
+}
+
+
+.icon_github {
+    position: absolute;
+    height: 85px;
+    
+    left: 50%;
+    transform: translate(-338%, -40%);
+    z-index: 1;
+
+    background: none;
+    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.26));
+}
+.icon_linkedin {
+    position: absolute;
+    height: 85px;
+    
+    left: 50%;
+    transform: translate(245%, -438%);
+    z-index: 1;
+
+    background: none;
+    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.26));
+}
+.icon_gmail {
+    position: absolute;
+    height: 85px;
+    
+    left: 50%;
+    transform: translate(303%, -215%);
+    z-index: 1;
+
+    background: none;
+    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.26));
+}
+
+
+.overlay_gmail {
+    position: absolute;
+    height: 80px;
+    width: 90px;
+    left: 50%;
+    transform: translate(282%, -225%);
+    background: none;
+    z-index: 4;
+    cursor: pointer;
+    
+}
+.overlay_gmail:hover {
+    width: 300px;
+    transform: translate(84%, -225%);
+}
+.animationForGmail_mouseIsIn {
+    animation: animationWhenTheMouseIsInGmailIcon 0.5s ease-in-out forwards;
+}
+.animationForGmail_mouseIsOut {
+    animation: animationWhenTheMouseLeaveTheGmailIcon 0.5s ease-in-out forwards;
+}
+@keyframes animationWhenTheMouseIsInGmailIcon {
+    0%{
+        width: 95px;
+        left: 300px;
+    }
+    100%{
+        width: 300px;
+        left: 402px;
+    }
+}
+@keyframes animationWhenTheMouseLeaveTheGmailIcon {
+    0%{
+        width: 300px;
+        left: 402px;
+    }
+    100%{
+        width: 95px;
+        left: 300px;
+    }
+    
+}
+/*Adicionar ícones do GitHub, Discord, Linkedin e Zap Zap*/
+/*LEMBRETE*
+AO COLOCAR O ÍCONE DO ZAP: AO PASSAR O MOUSE EM CIMA, 
+ABRIR UMA BANDEJA COM O MEU NÚMERO.*/
 .bannerWithMyProjects {
     position: relative;
     top: 300px;

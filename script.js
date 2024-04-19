@@ -44,7 +44,6 @@ class Star {
     }
 }
 
-
 class TextBalloon {
     constructor(top, left, height, width, textContent, borderRadius, gmail) {
         this.textBalloonElement = document.createElement('div');
@@ -57,22 +56,58 @@ class TextBalloon {
         this.textBalloonElement.style.fontFamily = 'Arial';
         this.textBalloonElement.style.fontSize = '20px';
         this.textBalloonElement.style.borderRadius = borderRadius;
+        this.textBalloonElement.style.textOverflow = 'hidden';
+        
+        
         
         if(gmail) {
+            gmail = document.querySelector('.overlay_gmail');
+            this.textBalloonP = document.createElement('p');
+            this.textBalloonP.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
+            this.textBalloonP.style.left = 1315+'px';
+            this.textBalloonP.style.top = 338+'px';
+            this.textBalloonP.style.position = 'absolute';
+            gmail.addEventListener('click', () => {
+                this.textBalloonP.innerHTML = 'E-mail copiado!';
+                this.textBalloonP.style.left = 1335+'px';
+                this.textBalloonP.style.top = 350+'px';
+
+                const email = 'felipe95176@gmail.com';
+                const clicked = document.createElement('input');
+                clicked.value = email;
+                document.body.appendChild(clicked);
+                clicked.select();
+                document.execCommand('copy');
+                document.body.removeChild(clicked);
+            });
+            this.textBalloonP.style.opacity = 0;
+            this.textBalloonP.style.zIndex = 3;
+            this.textBalloonP.style.textAlign = 'center';
+            this.textBalloonP.style.background = 'none';
+            this.textBalloonP.style.fontFamily = 'Arial';
+            this.textBalloonP.style.fontSize = '18px';
+            
+            document.body.appendChild(this.textBalloonP);
+
             let animou = false;
             let dentro = false;
-            gmail = document.querySelector('.overlay_gmail');
             gmail.addEventListener('mouseenter', () => {
+                this.textBalloonP.style.animation = 'fadeIn 1s ease-in-out forwards';
                 animou = false;
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsOut');
                 this.textBalloonElement.classList.add('animationForGmail_mouseIsIn');
+                
                 this.textBalloonElement.addEventListener('animationend', () => {
                     animou = true;
                 });
             });
             
             gmail.addEventListener('mouseleave', () => {
+                this.textBalloonP.style.animation = 'none';
+                this.textBalloonP.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
+                this.textBalloonP.style.left = 1315+'px';
+                this.textBalloonP.style.top = 338+'px';
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsIn');
                 if(dentro == true && animou == true) {
                     this.textBalloonElement.classList.add('animationForGmail_mouseIsOut');
@@ -84,6 +119,7 @@ class TextBalloon {
         }
     addToBody() {
         document.body.appendChild(this.textBalloonElement);
+        
     }
 }
 
@@ -157,7 +193,6 @@ function textBalloon()
     
 }
 textBalloon();
-
 
 
 //Função para mudar a animação do botão que aciona a função adicionarEspacoAcime().
