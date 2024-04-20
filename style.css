@@ -9,207 +9,13 @@
     transition: margin-top 2s ease;
 }
 
-
+/*Tela inicial.*/
 .sky {
     width: 100%;
     height: 500px;
     background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
     transition: height 0.5s ease;
 }
-
-
-/*Céu de cima completo*/
-.fullSky {
-    width: 100%;
-    height: 0px;
-    top: 0px;
-    animation: moreSky 2s ease;
-    animation-fill-mode: forwards;
-    position: absolute;
-    background: linear-gradient(hsl(241, 100%, 9%), hsla(240, 75%, 75%, .6));
-}
-/*Animação que aumenta o height do fullSky para que preencha da tela.*/
-@keyframes moreSky{
-    0% {
-        height: 0px;
-    
-    }
-
-    100% {
-        height: 1000px;
-    }
-}
-/*Animação que é o oposto da moreSky, diminuindo o height.*/
-@keyframes lessSky{
-    0% {
-        height: 1000px;
-    
-    }
-
-    100% {
-        height: 0px;
-    }
-}
-
-
-
-
-
-.cloudMain {
-    background-color: #fff;
-    background-image: linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
-    border-radius: 1em;
-    box-shadow: inset 0 0 0 px hsla(0,0%,100%,.5);
-    position: fixed;
-    filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
-}
-/*Animações que movem as nuvens, a primeira move
-as nuvens da esquerda para a direita e a segunda da
-direita para a esquerda.*/
-@keyframes moveLeftToRight {
-    0% { 
-        left: -200px;
-    }
-    100% {
-        left: calc(100% + 50px);
-    }
-}
-@keyframes moveRightToLeft {
-    0% { 
-        right: -200px;
-    }
-    100% {
-        right: calc(100% + 50px); 
-    }
-}
-
-
-.stars {
-    background: rgb(255, 255, 255);
-    opacity: 0;
-    position: absolute;
-    animation: fadeIn 2s ease-in;
-    opacity: 100;
-}
-/*Animação que muda a opacidade das estrelas, para não aparecerem 
-do nada na tela.*/
-@keyframes fadeIn {
-    0% {
-        opacity: 0; /* Opacidade inicial */
-    }
-    100% {
-        opacity: 1; /* Opacidade final */
-    }
-}
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-/*Animação apenas para rotacionar as estrelinhas.*/
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-        
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-
-/*Botão que ao clicar, muda o céu e aumenta a margem do topo.*/
-.upArrow {
-    height: 60px;
-    rotate: 180deg;
-    opacity: 40%;
-    background: none;
-    cursor: pointer;
-    position: absolute;
-    top: 3%;
-    left: 50%;
-    transform: translate(50%, 50%);
-    animation: upArrowIdle 2s ease-in-out infinite;
-}
-.upArrow:hover {
-    opacity: 80%;
-    height: 65px;
-}
-@keyframes upArrowIdle {
-    0% {
-        transform: translate(50%, 50%);
-      }
-      50% {
-        transform: translate(50%, 60%);
-      }
-      100% {
-        transform: translate(50%, 50%);
-      }
-}
-@keyframes move_upArrow_ToDown {
-    0% {
-        top: 3%;
-    }
-    100% {
-        top: 120%;
-    }
-}
-@keyframes move_upArrow_ToNormal {
-    0% {
-        top:120%;
-    }
-    100% {
-        top: 3%;
-    }
-}
-/*Segundo botão, esse faz com que as coisas voltem ao estado inicial.*/
-.downArrow {
-    height: 60px;
-    opacity: 40%;
-    background: none;
-    cursor: pointer;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    display: none;
-}
-.downArrow:hover {
-    opacity: 80%;
-    height: 65px;
-}
-@keyframes move_downArrow_ToUp {
-    0% {
-        top:120%;
-    }
-    100% {
-        top: 90%;
-    }
-}
-@keyframes downArrowIdle {
-    0% {
-        transform: translate(-50%, 50%);
-      }
-      50% {
-        transform: translate(-50%, 60%);
-      }
-      100% {
-        transform: translate(-50%, 50%);
-      }
-}
-@keyframes move_downArrow_ToInfinite {
-    0% {
-        top:90%;
-    }
-    100% {
-        top: -20%;
-    }
-}
-
-
 .textBalloon {
     position: relative;
     border-radius: 50px;
@@ -225,16 +31,6 @@ do nada na tela.*/
     font-optical-sizing: auto;
     font-style: normal;
 }
-/*.textBalloon:hover{
-    animation: growTextBalloon 0.25s linear forwards;
-}
-@keyframes growTextBalloon {
-    100%{
-        
-        width: 190px;
-    }
-}*/
-
 .myPhoto {
     position: absolute;
     
@@ -246,8 +42,6 @@ do nada na tela.*/
     border-radius: 50%;
     filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
 }
-
-
 .icon_github {
     position: absolute;
     height: 85px;
@@ -281,8 +75,6 @@ do nada na tela.*/
     background: none;
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.26));
 }
-
-
 .overlay_gmail {
     position: absolute;
     height: 80px;
@@ -325,10 +117,59 @@ do nada na tela.*/
     }
     
 }
-/*Adicionar ícones do GitHub, Discord, Linkedin e Zap Zap*/
-/*LEMBRETE*
-AO COLOCAR O ÍCONE DO ZAP: AO PASSAR O MOUSE EM CIMA, 
-ABRIR UMA BANDEJA COM O MEU NÚMERO.*/
+.icon_whatsapp {
+    position: absolute;
+    height: 85px;
+    
+    left: 50%;
+    transform: translate(250%, -32px);
+    z-index: 1;
+
+    background: none;
+    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.26));
+}
+.overlay_whatsapp {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    left: 50%;
+    transform: translate(205%, -40px);
+    background: none;
+    z-index: 4;
+    cursor: pointer;
+}
+.overlay_whatsapp:hover {
+    width: 300px;
+    transform: translate(68.5%, -40px);
+}
+.animationForWhatsapp_mouseIsIn {
+    animation: animationWhenTheMouseIsInWhatsappIcon 0.5s ease-in-out forwards;
+}
+.animationForWhatsapp_mouseIsOut {
+    animation: animationWhenTheMouseLeaveTheWhatsappIcon 0.5s ease-in-out forwards;
+}
+@keyframes animationWhenTheMouseIsInWhatsappIcon {
+    0%{
+        width: 100px;
+        left: 255px;
+    }
+    100%{
+        width: 300px;
+        left: 355px;
+    }
+}
+@keyframes animationWhenTheMouseLeaveTheWhatsappIcon {
+    0%{
+        width: 300px;
+        left: 355px;
+    }
+    100%{
+        width: 100px;
+        left: 255px;
+    }
+    
+}
 .bannerWithMyProjects {
     position: relative;
     top: 300px;
@@ -336,29 +177,211 @@ ABRIR UMA BANDEJA COM O MEU NÚMERO.*/
     height: 700px;
     width: 60%;
     border-radius: 50px;
-
     background: linear-gradient(rgb(124, 75, 156), rgb(98, 51, 129));
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
-    
 }
-
-
 .baseboard {
     position: absolute;
     height: 300px;
     width: 100%;
     transform: translate(0%, 175%);
     background: rgb(48, 48, 48);
-
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
     font-family: "Arial";
     font-optical-sizing: auto;
     font-size: 24px;
     color: white;
 }
+/*Fim da tela inicial.*/
+
+/*Dois botões, upArrow e downArrow que servem para levar o usuário para a
+segunda tela e de volta para a tela inicial respectivamente.*/
+.upArrow {
+    height: 60px;
+    rotate: 180deg;
+    opacity: 40%;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(50%, 50%);
+    animation: upArrowIdle 2s ease-in-out infinite;
+}
+.upArrow:hover {
+    opacity: 80%;
+    height: 65px;
+}
+@keyframes upArrowIdle {
+    0% {
+        transform: translate(50%, 50%);
+      }
+      50% {
+        transform: translate(50%, 60%);
+      }
+      100% {
+        transform: translate(50%, 50%);
+      }
+}
+@keyframes move_upArrow_ToDown {
+    0% {
+        top: 5%;
+    }
+    100% {
+        top: 120%;
+    }
+}
+@keyframes move_upArrow_ToNormal {
+    0% {
+        top:120%;
+    }
+    100% {
+        top: 5%;
+    }
+}
+/*Segundo botão, esse faz com que o usuário volte para a tela inicial.*/
+.downArrow {
+    height: 60px;
+    opacity: 40%;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: none;
+}
+.downArrow:hover {
+    opacity: 80%;
+    height: 65px;
+}
+@keyframes move_downArrow_ToUp {
+    0% {
+        top:120%;
+    }
+    100% {
+        top: 85%;
+    }
+}
+@keyframes downArrowIdle {
+    0% {
+        transform: translate(-50%, 50%);
+      }
+      50% {
+        transform: translate(-50%, 60%);
+      }
+      100% {
+        transform: translate(-50%, 50%);
+      }
+}
+@keyframes move_downArrow_ToInfinite {
+    0% {
+        top:85%;
+    }
+    100% {
+        top: -20%;
+    }
+}
+/*Aqui começa a segunda tela, com o céu completo e estrelado.*/
+.fullSky {
+    width: 100%;
+    height: 0px;
+    top: 0px;
+    animation: moreSky 2s ease;
+    animation-fill-mode: forwards;
+    position: absolute;
+    background: linear-gradient(hsl(241, 100%, 9%), hsla(240, 75%, 75%, .6));
+}
+/*Animação que aumenta o height da classe fullSky para que preencha da tela.*/
+@keyframes moreSky{
+    0% {
+        height: 0px;
+    
+    }
+
+    100% {
+        height: 1000px;
+    }
+}
+.cloudMain {
+    background-color: #fff;
+    background-image: linear-gradient(hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
+    border-radius: 1em;
+    box-shadow: inset 0 0 0 px hsla(0,0%,100%,.5);
+    position: fixed;
+    filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
+}
+/*Animações que movem as nuvens, a primeira move
+as nuvens da esquerda para a direita e a segunda da
+direita para a esquerda.*/
+@keyframes moveLeftToRight {
+    0% { 
+        left: -200px;
+    }
+    100% {
+        left: calc(100% + 50px);
+    }
+}
+@keyframes moveRightToLeft {
+    0% { 
+        right: -200px;
+    }
+    100% {
+        right: calc(100% + 50px); 
+    }
+}
+.stars {
+    background: rgb(255, 255, 255);
+    opacity: 0;
+    position: absolute;
+    animation: fadeIn 2s ease-in;
+    opacity: 100;
+}
+/*Animação que muda a opacidade das estrelas, para não aparecerem 
+do nada na tela, também são usadas para as animações dos textos que aparecem
+ao passar o mouse por cima do icone do gmail ou do whatsapp.*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Opacidade inicial */
+    }
+    100% {
+        opacity: 1; /* Opacidade final */
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/*Animação apenas para rotacionar as estrelas.*/
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*Animação que é o oposto da moreSky, diminuindo o height da classe fullSky,
+ela só é iniciada ao clicar no downArrow para que o usuário volte para a tela inicial.*/
+@keyframes lessSky{
+    0% {
+        height: 1000px;
+    
+    }
+
+    100% {
+        height: 0px;
+    }
+}
+
+
 
 

@@ -1,51 +1,6 @@
-//Função que cria uma nova div, a do fullSky.
-function fullSky() 
-{
-    const sky = document.createElement('div');
-    sky.classList.add('fullSky');
-    document.body.insertBefore(sky, document.body.firstChild); //Insere o céu no topo
-}
-
-
-//Classe CLoud que serve como base para as nuvens atuais.
-class Cloud {
-    constructor(left, right, animation, animationDuration) {
-        this.cloudElement = document.createElement('div');
-        this.cloudElement.classList.add('cloudMain');
-        this.cloudElement.style.height = Math.floor(Math.random() * 4) + 'em';
-        this.cloudElement.style.top = Math.floor(Math.random() * (window.innerHeight-100)) + 'px';
-        this.cloudElement.style.width = Math.floor(Math.random() * 10) + 'em';
-        this.cloudElement.style.left = left;
-        this.cloudElement.style.right = right;
-        this.cloudElement.style.animation = animation;
-        this.cloudElement.style.animationDuration = animationDuration;
-    }
-    addToBody() {
-        document.body.appendChild(this.cloudElement);
-    }
-}
-
-
-//Classe base para criar estrelas em locais e tamanhos variados.
-class Star {
-    constructor(left, top, size) {
-        this.starElement = document.createElement('div');
-        this.starElement.classList.add('stars');
-        this.starElement.style.left = left;
-        this.starElement.style.top = top;
-        this.starElement.style.height = size;
-        this.starElement.style.width = size;
-        this.starElement.addEventListener('animationend', () => {
-            this.starElement.style.animation = 'rotate 6s ease infinite'; //Adiciona animação rotate após a animação fadeIn acabar
-        });
-    }
-    addToBody() {
-        document.body.appendChild(this.starElement);
-    }
-}
-
+//Funções e classes para a tela inicial.
 class TextBalloon {
-    constructor(top, left, height, width, textContent, borderRadius, gmail) {
+    constructor(top, left, height, width, textContent, borderRadius, gmail, whatsapp) {
         this.textBalloonElement = document.createElement('div');
         this.textBalloonElement.classList.add('textBalloon');
         this.textBalloonElement.style.top = top;
@@ -53,33 +8,28 @@ class TextBalloon {
         this.textBalloonElement.style.height = height;
         this.textBalloonElement.style.width = width;
         this.textBalloonElement.textContent = textContent;
+        this.textBalloonElement.style.borderRadius = borderRadius;
         this.textBalloonElement.style.fontFamily = 'Arial';
         this.textBalloonElement.style.fontSize = '20px';
-        this.textBalloonElement.style.borderRadius = borderRadius;
-        
-        
-        
         
         if(gmail) {
             gmail = document.querySelector('.overlay_gmail');
-            this.textBalloonP = document.createElement('p');
-            this.textBalloonP.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
-            
-            this.textBalloonP.style.position = 'absolute';
-            this.textBalloonP.style.opacity = 0;
-            this.textBalloonP.style.zIndex = 3;
-            this.textBalloonP.style.textAlign = 'center';
-            this.textBalloonP.style.background = 'none';
-            this.textBalloonP.style.fontFamily = 'Arial';
-            this.textBalloonP.style.fontSize = '18px';
-            
-            this.textBalloonP.style.left = 50+'%';
-            this.textBalloonP.style.top = 0+'px';
-            this.textBalloonP.style.transform = 'translate(220%, 340px)';
+            this.textBalloon5_Gmail = document.createElement('p');
+            this.textBalloon5_Gmail.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
+            this.textBalloon5_Gmail.style.position = 'absolute';
+            this.textBalloon5_Gmail.style.opacity = 0;
+            this.textBalloon5_Gmail.style.zIndex = 3;
+            this.textBalloon5_Gmail.style.textAlign = 'center';
+            this.textBalloon5_Gmail.style.background = 'none';
+            this.textBalloon5_Gmail.style.fontFamily = 'Arial';
+            this.textBalloon5_Gmail.style.fontSize = '18px';
+            this.textBalloon5_Gmail.style.left = 50+'%';
+            this.textBalloon5_Gmail.style.top = 0+'px';
+            this.textBalloon5_Gmail.style.transform = 'translate(220%, 340px)';
             
             gmail.addEventListener('click', () => {
-                this.textBalloonP.innerHTML = 'E-mail copiado!';
-                this.textBalloonP.style.transform = 'translate(300%, 350px)';
+                this.textBalloon5_Gmail.innerHTML = 'E-mail copiado!';
+                this.textBalloon5_Gmail.style.transform = 'translate(300%, 350px)';
                 
 
                 const email = 'felipe95176@gmail.com';
@@ -92,12 +42,12 @@ class TextBalloon {
             });
             
             
-            document.body.appendChild(this.textBalloonP);
+            document.body.appendChild(this.textBalloon5_Gmail);
 
             let animou = false;
             let dentro = false;
             gmail.addEventListener('mouseenter', () => {
-                this.textBalloonP.style.animation = 'fadeIn 1s ease-in-out forwards';
+                this.textBalloon5_Gmail.style.animation = 'fadeIn 1s ease-in-out forwards';
                 animou = false;
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsOut');
@@ -109,9 +59,9 @@ class TextBalloon {
             });
             
             gmail.addEventListener('mouseleave', () => {
-                this.textBalloonP.style.animation = 'none';
-                this.textBalloonP.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
-                this.textBalloonP.style.transform = 'translate(220%, 340px)';
+                this.textBalloon5_Gmail.style.animation = 'none';
+                this.textBalloon5_Gmail.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
+                this.textBalloon5_Gmail.style.transform = 'translate(220%, 340px)';
                 
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsIn');
                 if(dentro == true && animou == true) {
@@ -121,14 +71,71 @@ class TextBalloon {
                 animou = false;
                 });
             }
+
+        if(whatsapp) {
+            whatsapp = document.querySelector('.overlay_whatsapp');
+            this.textBalloon6_Whatsapp = document.createElement('p');
+            this.textBalloon6_Whatsapp.innerHTML = 'Clique aqui para<br>copiar o meu número!';
+            this.textBalloon6_Whatsapp.style.position = 'absolute';
+            this.textBalloon6_Whatsapp.style.opacity = 0;
+            this.textBalloon6_Whatsapp.style.zIndex = 3;
+            this.textBalloon6_Whatsapp.style.textAlign = 'center';
+            this.textBalloon6_Whatsapp.style.background = 'none';
+            this.textBalloon6_Whatsapp.style.fontFamily = 'Arial';
+            this.textBalloon6_Whatsapp.style.fontSize = '18px';
+            this.textBalloon6_Whatsapp.style.left = 50+'%';
+            this.textBalloon6_Whatsapp.style.top = 0+'px';
+            this.textBalloon6_Whatsapp.style.transform = 'translate(175%, 488px)';
+
+            whatsapp.addEventListener('click', () => {
+                this.textBalloon6_Whatsapp.innerHTML = 'Número copiado!';
+                this.textBalloon6_Whatsapp.style.transform = 'translate(235%, 500px)';
+                
+                const numPhone = '(84) 98709-5902';
+                const clicked = document.createElement('input');
+                clicked.value = numPhone;
+                document.body.appendChild(clicked);
+                clicked.select();
+                document.execCommand('copy');
+                document.body.removeChild(clicked);
+            });
+            
+            document.body.appendChild(this.textBalloon6_Whatsapp);
+
+            let animou = false;
+            let dentro = false;
+            whatsapp.addEventListener('mouseenter', () => {
+                this.textBalloon6_Whatsapp.style.animation = 'fadeIn 1s ease-in-out forwards';
+                animou = false;
+                dentro = true;
+                this.textBalloonElement.classList.remove('animationForWhatsapp_mouseIsOut');
+                this.textBalloonElement.classList.add('animationForWhatsapp_mouseIsIn');
+                
+                this.textBalloonElement.addEventListener('animationend', () => {
+                    animou = true;
+                });
+            });
+            
+            whatsapp.addEventListener('mouseleave', () => {
+                this.textBalloon6_Whatsapp.style.animation = 'none';
+                this.textBalloon6_Whatsapp.innerHTML = 'Clique aqui para<br>copiar o meu número!';
+                this.textBalloon6_Whatsapp.style.transform = 'translate(175%, 488px)';
+                
+                this.textBalloonElement.classList.remove('animationForWhatsapp_mouseIsIn');
+                if(dentro == true && animou == true) {
+                    this.textBalloonElement.classList.add('animationForWhatsapp_mouseIsOut');
+                }
+                dentro = false;
+                animou = false;
+                });
+        }
+
         }
     addToBody() {
         document.body.appendChild(this.textBalloonElement);
         
     }
 }
-
-
 function textBalloon()
 {
     const textBalloon1 = new TextBalloon(
@@ -152,7 +159,7 @@ function textBalloon()
         -900 + 'px',
         -245 +'px',
         100 + 'px',
-        100 + 'px',
+        100 + 'px'
 
     );
 
@@ -161,7 +168,7 @@ function textBalloon()
         -1340 + 'px',
         250 +'px',
         100 + 'px',
-        100 + 'px',
+        100 + 'px'
 
     );
 
@@ -180,11 +187,14 @@ function textBalloon()
     
     //Whatsapp
     const textBalloon6 = new TextBalloon(
-        -1140 + 'px',
-        250 +'px',
-        80 + 'px',
-        140 + 'px',
-        'teste6'
+        -1180 + 'px',
+        255 +'px',
+        100 + 'px',
+        100 + 'px',
+        '',
+        50+'px',
+        false,
+        true
     );
     textBalloon1.addToBody();
     textBalloon2.addToBody();
@@ -198,9 +208,9 @@ function textBalloon()
     
 }
 textBalloon();
+//Fim das funções e classes para a tela inicial.
 
-
-//Função para mudar a animação do botão que aciona a função adicionarEspacoAcime().
+//Funções e classes para a segunda tela, o céu noturno estrelado.
 function upArrow() 
 {
     const upArrow = document.querySelector('.upArrow');
@@ -224,12 +234,48 @@ function downArrow()
         
     }, 1000);
 }
-
-
-
+function fullSky() 
+{
+    const sky = document.createElement('div');
+    sky.classList.add('fullSky');
+    document.body.insertBefore(sky, document.body.firstChild); //Insere o céu no topo
+}
+//Classe que serve como base para as nuvens.
+class Cloud {
+    constructor(left, right, animation, animationDuration) {
+        this.cloudElement = document.createElement('div');
+        this.cloudElement.classList.add('cloudMain');
+        this.cloudElement.style.height = Math.floor(Math.random() * 4) + 'em';
+        this.cloudElement.style.top = Math.floor(Math.random() * (window.innerHeight-100)) + 'px';
+        this.cloudElement.style.width = Math.floor(Math.random() * 10) + 'em';
+        this.cloudElement.style.left = left;
+        this.cloudElement.style.right = right;
+        this.cloudElement.style.animation = animation;
+        this.cloudElement.style.animationDuration = animationDuration;
+    }
+    addToBody() {
+        document.body.appendChild(this.cloudElement);
+    }
+}
+//Classe que serve como base para criar estrelas em locais e tamanhos variados.
+class Star {
+    constructor(left, top, size) {
+        this.starElement = document.createElement('div');
+        this.starElement.classList.add('stars');
+        this.starElement.style.left = left;
+        this.starElement.style.top = top;
+        this.starElement.style.height = size;
+        this.starElement.style.width = size;
+        this.starElement.addEventListener('animationend', () => {
+            this.starElement.style.animation = 'rotate 6s ease infinite'; //Adiciona animação rotate após a animação fadeIn acabar
+        })
+    }
+    addToBody() {
+        document.body.appendChild(this.starElement);
+    }
+}
 /*Função que adiciona margem ao body, além de iniciar algumas outras funções 
-como buttonToUpTheSky(), fullSky(), createStar() e, 
-createCloudsLeft e createCloudsRight.*/
+como up e downArrow(), fullSky(), e as classes Star e Cloud.*/
 function increaseTheTopMargin() 
 {
     //Adiciona margem superior ao body da página.
@@ -283,11 +329,9 @@ function increaseTheTopMargin()
         downArrow();
     }, 5000);
 }
-
-
-/*Função que volta a margem ao padrão (0px), e 
-além de remover as estrelas e as núvens, 
-ainda adicionar uma animação para que seja mais flúida a alteração do céu.*/
+/*Função que volta a margem ao padrão (0px), e além de remover 
+as estrelas e as núvens, ainda adicionar uma animação para que 
+seja mais flúida a alteração do céu.*/
 function marginToNormal()
 {
     document.body.style.marginTop = '0px';
