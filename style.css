@@ -215,8 +215,6 @@ do nada na tela.*/
     border-radius: 50px;
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
     background: rgb(245, 245, 245);
-    
-    
 
     display: flex;
     justify-content: center;

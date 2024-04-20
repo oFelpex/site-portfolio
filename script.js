@@ -56,7 +56,7 @@ class TextBalloon {
         this.textBalloonElement.style.fontFamily = 'Arial';
         this.textBalloonElement.style.fontSize = '20px';
         this.textBalloonElement.style.borderRadius = borderRadius;
-        this.textBalloonElement.style.textOverflow = 'hidden';
+        
         
         
         
@@ -64,13 +64,23 @@ class TextBalloon {
             gmail = document.querySelector('.overlay_gmail');
             this.textBalloonP = document.createElement('p');
             this.textBalloonP.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
-            this.textBalloonP.style.left = 1315+'px';
-            this.textBalloonP.style.top = 338+'px';
+            
             this.textBalloonP.style.position = 'absolute';
+            this.textBalloonP.style.opacity = 0;
+            this.textBalloonP.style.zIndex = 3;
+            this.textBalloonP.style.textAlign = 'center';
+            this.textBalloonP.style.background = 'none';
+            this.textBalloonP.style.fontFamily = 'Arial';
+            this.textBalloonP.style.fontSize = '18px';
+            
+            this.textBalloonP.style.left = 50+'%';
+            this.textBalloonP.style.top = 0+'px';
+            this.textBalloonP.style.transform = 'translate(220%, 340px)';
+            
             gmail.addEventListener('click', () => {
                 this.textBalloonP.innerHTML = 'E-mail copiado!';
-                this.textBalloonP.style.left = 1335+'px';
-                this.textBalloonP.style.top = 350+'px';
+                this.textBalloonP.style.transform = 'translate(300%, 350px)';
+                
 
                 const email = 'felipe95176@gmail.com';
                 const clicked = document.createElement('input');
@@ -80,12 +90,7 @@ class TextBalloon {
                 document.execCommand('copy');
                 document.body.removeChild(clicked);
             });
-            this.textBalloonP.style.opacity = 0;
-            this.textBalloonP.style.zIndex = 3;
-            this.textBalloonP.style.textAlign = 'center';
-            this.textBalloonP.style.background = 'none';
-            this.textBalloonP.style.fontFamily = 'Arial';
-            this.textBalloonP.style.fontSize = '18px';
+            
             
             document.body.appendChild(this.textBalloonP);
 
@@ -106,8 +111,8 @@ class TextBalloon {
             gmail.addEventListener('mouseleave', () => {
                 this.textBalloonP.style.animation = 'none';
                 this.textBalloonP.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
-                this.textBalloonP.style.left = 1315+'px';
-                this.textBalloonP.style.top = 338+'px';
+                this.textBalloonP.style.transform = 'translate(220%, 340px)';
+                
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsIn');
                 if(dentro == true && animou == true) {
                     this.textBalloonElement.classList.add('animationForGmail_mouseIsOut');
