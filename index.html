@@ -8,26 +8,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sky"></div>
-    <img src="assets\eu.png" alt="Esse sou eu!" class = myPhoto>
-    <img src="assets\ArrowGradiente.png" class=upArrow onclick="increaseTheTopMargin()" >
-    <a href="https://github.com/oFelpex">
-        <img src="assets\icon_github.png" class=icon_github>
-    </a>
-    <a href="https://www.linkedin.com/in/felipe-costa-569a461b1/">
-        <img src="assets\icon_linkedin.png" class=icon_linkedin>
-    </a>
-    <div>
-        <img src="assets\icon_gmail.png" class="icon_gmail">
-        <div class="overlay_gmail"></div>
-    </div>
-    <div>
-        <img src="assets\icon_whatsapp.png" class="icon_whatsapp">
-        <div class="overlay_whatsapp"></div>
-    </div>
-    <div class="bannerWithMyProjects"></div>
-    <div class="baseboard">Site em desenvolvimento!</div>
+    <header>
+        <div class="sky"></div>
+        <img src="assets\eu.png" alt="Esse sou eu!" class = myPhoto>
+        <img src="assets\ArrowGradiente.png" class=upArrow onclick="increaseTheTopMargin()" >
+        <nav>
+            <a href="https://github.com/oFelpex">
+                <img src="assets\icon_github.png" class=icon_github>
+            </a>
+            <a href="https://www.linkedin.com/in/felipe-costa-569a461b1/">
+                <img src="assets\icon_linkedin.png" class=icon_linkedin>
+            </a>
+        </nav>
+        <div>
+            <img src="assets\icon_gmail.png" class="icon_gmail">
+            <div class="overlay_gmail"></div>
+        </div>
+        <div>
+            <img src="assets\icon_whatsapp.png" class="icon_whatsapp">
+            <div class="overlay_whatsapp"></div>
+        </div>
+    </header>
+    <section class="bannerWithMyProjects"></section>
+    <footer class="baseboard">Site em desenvolvimento!</footer>
+
     <script src="script.js"></script>
+    <script src="starrySky.js"></script>
     <img src="assets\ArrowGradiente.png" class=downArrow onclick="marginToNormal()">
 </body>
 </html>

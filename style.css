@@ -16,10 +16,14 @@
     background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
     transition: height 0.5s ease;
 }
+
+:root {
+    --dropshadowForTextBalloon: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
+}
 .textBalloon {
     position: relative;
     border-radius: 50px;
-    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
+    filter: var(--dropshadowForTextBalloon);
     background: rgb(245, 245, 245);
 
     display: flex;
@@ -31,17 +35,6 @@
     font-optical-sizing: auto;
     font-style: normal;
 }
-.myPhoto {
-    position: absolute;
-    
-    left: 50%;
-    transform: translate(-50%, -100%);
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
-    border-radius: 50%;
-    filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
-}
 .icon_github {
     position: absolute;
     height: 85px;
@@ -51,7 +44,7 @@
     z-index: 1;
 
     background: none;
-    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.26));
+    filter: var(--dropshadowForTextBalloon);
 }
 .icon_linkedin {
     position: absolute;
@@ -62,7 +55,7 @@
     z-index: 1;
 
     background: none;
-    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.26));
+    filter: var(--dropshadowForTextBalloon);
 }
 .icon_gmail {
     position: absolute;
@@ -73,7 +66,7 @@
     z-index: 1;
 
     background: none;
-    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.26));
+    filter: var(--dropshadowForTextBalloon);
 }
 .overlay_gmail {
     position: absolute;
@@ -126,7 +119,7 @@
     z-index: 1;
 
     background: none;
-    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.26));
+    filter: var(--dropshadowForTextBalloon);
 }
 .overlay_whatsapp {
     position: absolute;
@@ -169,6 +162,17 @@
         left: 255px;
     }
     
+}
+.myPhoto {
+    position: absolute;
+    
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
+    border-radius: 50%;
+    filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
 }
 .bannerWithMyProjects {
     position: relative;
