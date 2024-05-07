@@ -84,12 +84,12 @@
     transform: translate(84%, -225%);
 }
 .animationForGmail_mouseIsIn {
-    animation: animationWhenTheMouseIsInGmailIcon 0.5s ease-in-out forwards;
+    animation: animationForGmail_mouseIsIn 0.5s ease-in-out forwards;
 }
 .animationForGmail_mouseIsOut {
-    animation: animationWhenTheMouseLeaveTheGmailIcon 0.5s ease-in-out forwards;
+    animation: animationForGmail_mouseIsOut 0.5s ease-in-out forwards;
 }
-@keyframes animationWhenTheMouseIsInGmailIcon {
+@keyframes animationForGmail_mouseIsIn {
     0%{
         width: 95px;
         left: 300px;
@@ -99,7 +99,7 @@
         left: 402px;
     }
 }
-@keyframes animationWhenTheMouseLeaveTheGmailIcon {
+@keyframes animationForGmail_mouseIsOut {
     0%{
         width: 300px;
         left: 402px;
@@ -160,6 +160,15 @@
     100%{
         width: 100px;
         left: 255px;
+    }
+    
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
     
 }

@@ -73,7 +73,7 @@ class TextBalloon {
             }
 
         if(whatsapp) {
-            whatsapp = document.querySelector('.overlay_whatsapp');
+            const whatsapp = document.querySelector('.overlay_whatsapp');
             this.textBalloon6_Whatsapp = document.createElement('p');
             this.textBalloon6_Whatsapp.innerHTML = 'Clique aqui para<br>copiar o meu número!';
             this.textBalloon6_Whatsapp.style.position = 'absolute';
@@ -196,15 +196,15 @@ function textBalloon()
         false,
         true
     );
+
     textBalloon1.addToBody();
     textBalloon2.addToBody();
     textBalloon3.addToBody();
     textBalloon4.addToBody();
    
+    
     textBalloon5.addToBody();
     textBalloon6.addToBody();
-
-    
     
 }
 textBalloon();
