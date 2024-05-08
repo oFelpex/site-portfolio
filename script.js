@@ -47,7 +47,7 @@ class TextBalloon {
             let animou = false;
             let dentro = false;
             gmail.addEventListener('mouseenter', () => {
-                this.textBalloon5_Gmail.style.animation = 'fadeIn 1s ease-in-out forwards';
+                this.textBalloon5_Gmail.style.animation = 'fadeInAndSmoothMoviment 1s ease-in-out forwards';
                 animou = false;
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsOut');
@@ -83,7 +83,7 @@ class TextBalloon {
             this.textBalloon6_Whatsapp.style.background = 'none';
             this.textBalloon6_Whatsapp.style.fontFamily = 'Arial';
             this.textBalloon6_Whatsapp.style.fontSize = '18px';
-            this.textBalloon6_Whatsapp.style.left = 50+'%';
+            this.textBalloon6_Whatsapp.style.left = 45+'%';
             this.textBalloon6_Whatsapp.style.top = 0+'px';
             this.textBalloon6_Whatsapp.style.transform = 'translate(175%, 488px)';
 
@@ -105,7 +105,7 @@ class TextBalloon {
             let animou = false;
             let dentro = false;
             whatsapp.addEventListener('mouseenter', () => {
-                this.textBalloon6_Whatsapp.style.animation = 'fadeIn 1s ease-in-out forwards';
+                this.textBalloon6_Whatsapp.style.animation = 'fadeInAndSmoothMoviment 1s ease-in-out forwards';
                 animou = false;
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationForWhatsapp_mouseIsOut');
