@@ -1,4 +1,3 @@
-//Funções e classes para a tela inicial.
 class TextBalloon {
     constructor(top, left, height, width, textContent, borderRadius, gmail, whatsapp) {
         this.textBalloonElement = document.createElement('div');
@@ -31,7 +30,6 @@ class TextBalloon {
                 this.textBalloon5_Gmail.innerHTML = 'E-mail copiado!';
                 this.textBalloon5_Gmail.style.transform = 'translate(300%, 350px)';
                 
-
                 const email = 'felipe95176@gmail.com';
                 const clicked = document.createElement('input');
                 clicked.value = email;
@@ -133,7 +131,6 @@ class TextBalloon {
         }
     addToBody() {
         document.body.appendChild(this.textBalloonElement);
-        
     }
 }
 function textBalloon()
@@ -208,6 +205,5 @@ function textBalloon()
     
 }
 textBalloon();
-//Fim das funções e classes para a tela inicial.
 
 

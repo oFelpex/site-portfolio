@@ -3,20 +3,18 @@
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
-    background-color: rgb(224, 224, 224);
+    background-color: aliceblue;
     overflow: auto;
     overflow-x: hidden;
     transition: margin-top 2s ease;
 }
 
-/*Tela inicial.*/
 .sky {
     width: 100%;
     height: 500px;
     background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
     transition: height 0.5s ease;
 }
-
 :root {
     --dropshadowForTextBalloon: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
 }
@@ -90,27 +88,6 @@
 .animationForGmail_mouseIsOut {
     animation: animationForGmail_mouseIsOut 0.5s ease-in-out forwards;
 }
-@keyframes animationForGmail_mouseIsIn {
-    0%{
-        width: 95px;
-        left: 300px;
-    }
-    100%{
-        width: 300px;
-        left: 402px;
-    }
-}
-@keyframes animationForGmail_mouseIsOut {
-    0%{
-        width: 300px;
-        left: 402px;
-    }
-    100%{
-        width: 95px;
-        left: 300px;
-    }
-    
-}
 .icon_whatsapp {
     position: absolute;
     height: 85px;
@@ -143,6 +120,27 @@
 }
 .animationForWhatsapp_mouseIsOut {
     animation: animationWhenTheMouseLeaveTheWhatsappIcon 0.5s ease-in-out forwards;
+}
+@keyframes animationForGmail_mouseIsIn {
+    0%{
+        width: 95px;
+        left: 300px;
+    }
+    100%{
+        width: 300px;
+        left: 402px;
+    }
+}
+@keyframes animationForGmail_mouseIsOut {
+    0%{
+        width: 300px;
+        left: 402px;
+    }
+    100%{
+        width: 95px;
+        left: 300px;
+    }
+    
 }
 @keyframes animationWhenTheMouseIsInWhatsappIcon {
     0%{
@@ -186,8 +184,11 @@
     border-radius: 50%;
     filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
 }
+
+/*Banner com os meus projetos*/
 .bannerWithMyProjects {
     position: relative;
+    display: flex;
     top: 300px;
     left: 0%;
     height: 700px;
@@ -196,6 +197,10 @@
     background: linear-gradient(rgb(124, 75, 156), rgb(98, 51, 129));
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
 }
+
+
+/*Fim do banner*/
+
 .baseboard {
     position: absolute;
     height: 300px;
@@ -211,7 +216,8 @@
     font-size: 24px;
     color: white;
 }
-/*Fim da tela inicial.*/
+
+
 
 
 
