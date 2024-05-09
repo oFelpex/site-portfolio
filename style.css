@@ -4,9 +4,7 @@
     padding: 0 auto;
     box-sizing: border-box;
     background-color: aliceblue;
-    overflow: auto;
     overflow-x: hidden;
-    transition: margin-top 2s ease;
 }
 
 .sky {
@@ -189,6 +187,8 @@
 .bannerWithMyProjects {
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
     top: 300px;
     left: 0%;
     height: 700px;
@@ -196,8 +196,32 @@
     border-radius: 50px;
     background: linear-gradient(rgb(124, 75, 156), rgb(98, 51, 129));
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
-}
 
+}
+.banner_container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    height: 600px;
+    width: 80%;
+}
+.card {
+    margin: 10px;
+    width: 20%;
+    height: 80%;
+    background-color: black;
+    border-radius: 20px;
+}
+.heading {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.description {
+    margin-top: 50px;
+}
 
 /*Fim do banner*/
 
