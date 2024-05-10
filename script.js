@@ -24,7 +24,7 @@ class TextBalloon {
             this.textBalloon5_Gmail.style.fontSize = '18px';
             this.textBalloon5_Gmail.style.left = 50+'%';
             this.textBalloon5_Gmail.style.top = 0+'px';
-            this.textBalloon5_Gmail.style.transform = 'translate(220%, 340px)';
+            this.textBalloon5_Gmail.style.transform = 'translate(220%, 440px)';
             
             gmail.addEventListener('click', () => {
                 this.textBalloon5_Gmail.innerHTML = 'E-mail copiado!';
@@ -45,7 +45,7 @@ class TextBalloon {
             let animou = false;
             let dentro = false;
             gmail.addEventListener('mouseenter', () => {
-                this.textBalloon5_Gmail.style.animation = 'fadeInAndSmoothMoviment 0.5s ease-in-out forwards';
+                this.textBalloon5_Gmail.style.animation = 'fadeInAndSmoothMoviment 1s ease-in-out forwards';
                 animou = false;
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsOut');
@@ -59,7 +59,7 @@ class TextBalloon {
             gmail.addEventListener('mouseleave', () => {
                 this.textBalloon5_Gmail.style.animation = 'none';
                 this.textBalloon5_Gmail.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
-                this.textBalloon5_Gmail.style.transform = 'translate(220%, 340px)';
+                this.textBalloon5_Gmail.style.transform = 'translate(220%, 440px)';
                 
                 this.textBalloonElement.classList.remove('animationForGmail_mouseIsIn');
                 if(dentro == true && animou == true) {
@@ -103,7 +103,7 @@ class TextBalloon {
             let animou = false;
             let dentro = false;
             whatsapp.addEventListener('mouseenter', () => {
-                this.textBalloon6_Whatsapp.style.animation = 'fadeInAndSmoothMoviment 0.5s ease-in-out forwards';
+                this.textBalloon6_Whatsapp.style.animation = 'fadeInAndSmoothMoviment 1s ease-in-out forwards';
                 animou = false;
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationForWhatsapp_mouseIsOut');
@@ -136,7 +136,7 @@ class TextBalloon {
 function textBalloon()
 {
     const textBalloon1 = new TextBalloon(
-        -1100 + 'px',
+        -1000 + 'px',
         -250 +'px',
         80 + 'px',
         140 + 'px',
@@ -144,7 +144,7 @@ function textBalloon()
     );
     
     const textBalloon2 = new TextBalloon(
-        -1000 + 'px',
+        -900 + 'px',
         -300 +'px',
         80 + 'px',
         140 + 'px',
@@ -153,7 +153,7 @@ function textBalloon()
 
     //Github
     const textBalloon3 = new TextBalloon(
-        -900 + 'px',
+        -800 + 'px',
         -245 +'px',
         100 + 'px',
         100 + 'px'
@@ -162,7 +162,7 @@ function textBalloon()
 
     //Linkedin
     const textBalloon4 = new TextBalloon(
-        -1340 + 'px',
+        -1240 + 'px',
         250 +'px',
         100 + 'px',
         100 + 'px'
@@ -171,7 +171,7 @@ function textBalloon()
 
     //Gmail
     const textBalloon5 = new TextBalloon(
-        -1240 + 'px',
+        -1140 + 'px',
         300 +'px',
         80 + 'px',
         95 + 'px',
@@ -184,7 +184,7 @@ function textBalloon()
     
     //Whatsapp
     const textBalloon6 = new TextBalloon(
-        -1180 + 'px',
+        -1080 + 'px',
         255 +'px',
         100 + 'px',
         100 + 'px',

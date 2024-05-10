@@ -6,7 +6,13 @@
     background-color: aliceblue;
     overflow-x: hidden;
 }
-
+.navigationBar{
+    position: fixed;
+    z-index: 99;
+    background-color: wheat;
+    width: 100%;
+    height: 8%;
+}
 .sky {
     width: 100%;
     height: 500px;
@@ -36,7 +42,7 @@
     height: 85px;
     
     left: 50%;
-    transform: translate(-338%, -40%);
+    transform: translate(-338%, 80%);
     z-index: 1;
 
     background: none;
@@ -47,7 +53,7 @@
     height: 85px;
     
     left: 50%;
-    transform: translate(245%, -438%);
+    transform: translate(245%, -320%);
     z-index: 1;
 
     background: none;
@@ -58,7 +64,7 @@
     height: 70px;
     
     left: 50%;
-    transform: translate(292%, -250%);
+    transform: translate(292%, -106%);
     z-index: 4;
 
     background: white;
@@ -70,7 +76,7 @@
     height: 80px;
     width: 90px;
     left: 50%;
-    transform: translate(282%, -225%);
+    transform: translate(282%, -100%);
     background: none;
     z-index: 4;
     cursor: pointer;
@@ -78,7 +84,7 @@
 }
 .overlay_gmail:hover {
     width: 300px;
-    transform: translate(84%, -225%);
+    transform: translate(84%, -100%);
 }
 .animationForGmail_mouseIsIn {
     animation: animationForGmail_mouseIsIn 0.3s ease-in-out forwards;
@@ -91,7 +97,7 @@
     height: 85px;
     
     left: 50%;
-    transform: translate(250%, -32px);
+    transform: translate(250%, 68px);
     z-index: 4;
 
     background: white;
@@ -104,14 +110,14 @@
     width: 100px;
     border-radius: 50px;
     left: 50%;
-    transform: translate(205%, -40px);
+    transform: translate(205%, 60px);
     background: none;
     z-index: 4;
     cursor: pointer;
 }
 .overlay_whatsapp:hover {
     width: 300px;
-    transform: translate(68.5%, -40px);
+    transform: translate(68.5%, 60px);
 }
 .animationForWhatsapp_mouseIsIn {
     animation: animationWhenTheMouseIsInWhatsappIcon 0.3s ease-in-out forwards;
@@ -175,7 +181,7 @@
     position: absolute;
     
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -75%);
     width: 350px;
     height: 350px;
     background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
