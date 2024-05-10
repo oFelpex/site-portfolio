@@ -81,10 +81,10 @@
     transform: translate(84%, -225%);
 }
 .animationForGmail_mouseIsIn {
-    animation: animationForGmail_mouseIsIn 0.5s ease-in-out forwards;
+    animation: animationForGmail_mouseIsIn 0.3s ease-in-out forwards;
 }
 .animationForGmail_mouseIsOut {
-    animation: animationForGmail_mouseIsOut 0.5s ease-in-out forwards;
+    animation: animationForGmail_mouseIsOut 0.3s ease-in-out forwards;
 }
 .icon_whatsapp {
     position: absolute;
@@ -114,10 +114,10 @@
     transform: translate(68.5%, -40px);
 }
 .animationForWhatsapp_mouseIsIn {
-    animation: animationWhenTheMouseIsInWhatsappIcon 0.5s ease-in-out forwards;
+    animation: animationWhenTheMouseIsInWhatsappIcon 0.3s ease-in-out forwards;
 }
 .animationForWhatsapp_mouseIsOut {
-    animation: animationWhenTheMouseLeaveTheWhatsappIcon 0.5s ease-in-out forwards;
+    animation: animationWhenTheMouseLeaveTheWhatsappIcon 0.3s ease-in-out forwards;
 }
 @keyframes animationForGmail_mouseIsIn {
     0%{
@@ -195,7 +195,7 @@
     width: 60%;
     border-radius: 50px;
     background: linear-gradient(rgb(124, 75, 156), rgb(98, 51, 129));
-    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.212));
+    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.514));
 
 }
 .banner_container {
@@ -224,7 +224,6 @@
 }
 
 /*Fim do banner*/
-
 .baseboard {
     position: absolute;
     height: 300px;
