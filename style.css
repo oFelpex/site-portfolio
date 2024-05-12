@@ -15,23 +15,84 @@
 }
 .home {
     position: absolute;
-    left: 70%;
+    left: 65%;
     background: none;
-    width: 80px;
     height: 100%;
     cursor: pointer;
     border: none;
     font-size: 16px;
 }
-.aboutMe {
+.showAboutMe {
     position: absolute;
-    left: 75%;
+    left: 70%;
     background: none;
-    width: 80px;
     height: 100%;
     cursor: pointer;
     border: none;
     font-size: 16px;
+}
+.showAboutMeUnderlay {
+    position: absolute;
+    left: 320px;
+    top: 235px;
+    width: 450px;
+    height: 150px;
+    border-radius: 20px;
+    opacity: 0;
+    background: rgba(153, 0, 255, 0.25);
+}
+@keyframes showAboutMeUnderlay_purple {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.contacts {
+    position: absolute;
+    left: 75%;
+    background: none;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+.showMyContactsUnderlay {
+    position: absolute;
+    left: 330px;
+    top: 435px;
+    width: 450px;
+    height: 175px;
+    border-radius: 20px;
+    opacity: 0;
+    background: rgba(153, 0, 255, 0.25);
+}
+@keyframes showMyContacts_purple {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translate(-105%, -350%);
+    background: none;
+}
+.aboutMe {
+    position: absolute;
+    left: 50%;
+    transform: translate(-125%, -450%);
+    background: none;
 }
 .sky {
     width: 100%;
@@ -53,7 +114,7 @@
     height: 50px;
     
     left: 50%;
-    transform: translate(-50%, -80%);
+    transform: translate(-110%, 70%);
     z-index: 1;
 
     background: none;
@@ -64,7 +125,7 @@
     height: 50px;
     
     left: 50%;
-    transform: translate(-200%, -80%);
+    transform: translate(-260%, 70%);
     z-index: 1;
 
     background: none;
@@ -72,10 +133,10 @@
 }
 .icon_gmail {
     position: absolute;
-    height: 50px;
+    height: 60px;
     
     left: 50%;
-    transform: translate(-700%, -150%);
+    transform: translate(-667%, -70%);
     z-index: 4;
 
     background: white;
@@ -84,26 +145,26 @@
 }
 .overlay_gmail {
     position: absolute;
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     border-radius: 50px;
     left: 50%;
-    transform: translate(-590%, -133%);
+    transform: translate(-578%, -68%);
     background: none;
     z-index: 4;
     cursor: pointer;
     
 }
 .overlay_gmail:hover {
-    width: 200px;
-    transform: translate(-177%, -133%);
+    width: 250px;
+    transform: translate(-162%, -68%);
 }
 .icon_whatsapp {
     position: absolute;
-    height: 50px;
+    height: 60px;
     
     left: 50%;
-    transform: translate(-700%, -20%);
+    transform: translate(-667%, 50%);
     z-index: 4;
 
     background: white;
@@ -112,18 +173,18 @@
 }
 .overlay_whatsapp {
     position: absolute;
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     border-radius: 50px;
     left: 50%;
-    transform: translate(-590%, -25%);
+    transform: translate(-578%, 35%);
     background: none;
     z-index: 4;
     cursor: pointer;
 }
 .overlay_whatsapp:hover {
-    width: 200px;
-    transform: translate(-177%, -25%);
+    width: 250px;
+    transform: translate(-162%, 35%);
 }
 .animationWhenTheMouseIsIn {
     animation: animationWhenTheMouseIsIn 0.3s ease-in-out forwards;
@@ -133,22 +194,22 @@
 }
 @keyframes animationWhenTheMouseIsIn {
     0%{
-        width: 60px;
-        left: -324px;
+        width: 70px;
+        left: -370px;
     }
     100%{
-        width: 200px;
-        left: -254px;
+        width: 250px;
+        left: -280px;
     }
 }
 @keyframes animationWhenTheMouseLeave {
     0%{
-        width: 200px;
-        left: -254px;
+        width: 250px;
+        left: -280px;
     }
     100%{
-        width: 60px;
-        left: -324px;
+        width: 70px;
+        left: -370px;
     }
     
 }
