@@ -10,9 +10,11 @@
 <body>
     <header>
         <nav class="navigationBar">
-            <button class="home" onclick="returnTop()">Início</button>
+            <div class="mySimpleLogo">FELPEX.DEV</div>
+            <button class="home" onclick="returnTop(0)">Início</button>
             <button class="showAboutMe" onclick="showAboutMe()">Sobre</button>
-            <button class="contacts" onclick="showMyContacts()">Contatos</button>
+            <button class="showMyContacts" onclick="showMyContacts()">Contatos</button>
+            <button class="showMyProjects" onclick="showMyProjects()">Projetos</button>
         </nav>
         <div class="sky"></div>
         <img src="assets\eu.png" alt="Esse sou eu!" class = myPhoto>
@@ -30,8 +32,8 @@
         </nav>
         <h1 class="title">Desenvolvedor Front-End<br>JavaScript</h1>
         <p class="aboutMe">Olá! Me chamo Felipe Costa, tenho 22 anos e<br>sou um dev iniciante com foco no Front-End</p>
-        <div class="showAboutMeUnderlay"></div>
-        <div class="showMyContactsUnderlay"></div>
+        <div class="showAboutMe_underlay"></div>
+        <div class="showMyContacts_underlay"></div>
     </header>
     <div class="bannerWithMyProjects">
         <div class="banner_container">

@@ -1,21 +1,24 @@
-function returnTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+function returnTop(topValue) {
+    window.scrollTo({top: topValue, behavior: 'smooth'});
 }
 function showAboutMe() {
-    returnTop();
-    showAboutMe_underlay = document.querySelector('.showAboutMeUnderlay');
-    showAboutMe_underlay.style.animation = 'showAboutMeUnderlay_purple 1s ease-in-out';
+    returnTop(0);
+    showAboutMe_underlay = document.querySelector('.showAboutMe_underlay');
+    showAboutMe_underlay.style.animation = 'showAboutMe_purple 1s ease-in-out';
     showAboutMe_underlay.addEventListener('animationend', () =>{
         showAboutMe_underlay.style.animation = 'none';
     });
 }
 function showMyContacts() {
-    returnTop();
-    showMyContacts_underlay = document.querySelector('.showMyContactsUnderlay');
+    returnTop(0);
+    showMyContacts_underlay = document.querySelector('.showMyContacts_underlay');
     showMyContacts_underlay.style.animation = 'showMyContacts_purple 1s ease-in-out';
     showMyContacts_underlay.addEventListener('animationend', () =>{
         showMyContacts_underlay.style.animation = 'none';
     });
+}
+function showMyProjects() {
+    returnTop(600);
 }
 class TextBalloon {
     constructor(top, left, height, width, gmail, whatsapp) {
@@ -142,7 +145,7 @@ function textBalloon()
 {
     //Github
     const textBalloon1 = new TextBalloon(
-        -670 + 'px',
+        -570 + 'px',
         -30 +'px',
         60 + 'px',
         60 + 'px'
@@ -150,7 +153,7 @@ function textBalloon()
 
     //Linkedin
     const textBalloon2 = new TextBalloon(
-        -730 + 'px',
+        -630 + 'px',
         -105 +'px',
         60 + 'px',
         60 + 'px'
@@ -158,7 +161,7 @@ function textBalloon()
 
     //Gmail
     const textBalloon3 = new TextBalloon(
-        -868 + 'px',
+        -768 + 'px',
         -370 +'px',
         70 + 'px',
         70 + 'px',
@@ -168,7 +171,7 @@ function textBalloon()
     
     //Whatsapp
     const textBalloon4 = new TextBalloon(
-        -865 + 'px',
+        -765 + 'px',
         -370 +'px',
         70 + 'px',
         70 + 'px',
