@@ -11,7 +11,27 @@
     z-index: 99;
     background-color: wheat;
     width: 100%;
-    height: 8%;
+    height: 55px;
+}
+.home {
+    position: absolute;
+    left: 70%;
+    background: none;
+    width: 80px;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+.aboutMe {
+    position: absolute;
+    left: 75%;
+    background: none;
+    width: 80px;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
 }
 .sky {
     width: 100%;
@@ -20,29 +40,20 @@
     transition: height 0.5s ease;
 }
 :root {
-    --dropshadowForTextBalloon: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
+    --dropshadowForTextBalloon: drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.26));
 }
 .textBalloon {
     position: relative;
     border-radius: 50px;
     filter: var(--dropshadowForTextBalloon);
     background: rgb(245, 245, 245);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    font-family: "Arial";
-    font-optical-sizing: auto;
-    font-style: normal;
 }
 .icon_github {
     position: absolute;
-    height: 85px;
+    height: 50px;
     
     left: 50%;
-    transform: translate(-338%, 80%);
+    transform: translate(-50%, -80%);
     z-index: 1;
 
     background: none;
@@ -50,10 +61,10 @@
 }
 .icon_linkedin {
     position: absolute;
-    height: 85px;
+    height: 50px;
     
     left: 50%;
-    transform: translate(245%, -320%);
+    transform: translate(-200%, -80%);
     z-index: 1;
 
     background: none;
@@ -61,43 +72,38 @@
 }
 .icon_gmail {
     position: absolute;
-    height: 70px;
+    height: 50px;
     
     left: 50%;
-    transform: translate(292%, -106%);
+    transform: translate(-700%, -150%);
     z-index: 4;
 
     background: white;
-    border-radius: 10%;
+    border-radius: 50%;
     filter: var(--dropshadowForTextBalloon);
 }
 .overlay_gmail {
     position: absolute;
-    height: 80px;
-    width: 90px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
     left: 50%;
-    transform: translate(282%, -100%);
+    transform: translate(-590%, -133%);
     background: none;
     z-index: 4;
     cursor: pointer;
     
 }
 .overlay_gmail:hover {
-    width: 300px;
-    transform: translate(84%, -100%);
-}
-.animationForGmail_mouseIsIn {
-    animation: animationForGmail_mouseIsIn 0.3s ease-in-out forwards;
-}
-.animationForGmail_mouseIsOut {
-    animation: animationForGmail_mouseIsOut 0.3s ease-in-out forwards;
+    width: 200px;
+    transform: translate(-177%, -133%);
 }
 .icon_whatsapp {
     position: absolute;
-    height: 85px;
+    height: 50px;
     
     left: 50%;
-    transform: translate(250%, 68px);
+    transform: translate(-700%, -20%);
     z-index: 4;
 
     background: white;
@@ -106,64 +112,43 @@
 }
 .overlay_whatsapp {
     position: absolute;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50px;
     left: 50%;
-    transform: translate(205%, 60px);
+    transform: translate(-590%, -25%);
     background: none;
     z-index: 4;
     cursor: pointer;
 }
 .overlay_whatsapp:hover {
-    width: 300px;
-    transform: translate(68.5%, 60px);
+    width: 200px;
+    transform: translate(-177%, -25%);
 }
-.animationForWhatsapp_mouseIsIn {
-    animation: animationWhenTheMouseIsInWhatsappIcon 0.3s ease-in-out forwards;
+.animationWhenTheMouseIsIn {
+    animation: animationWhenTheMouseIsIn 0.3s ease-in-out forwards;
 }
-.animationForWhatsapp_mouseIsOut {
-    animation: animationWhenTheMouseLeaveTheWhatsappIcon 0.3s ease-in-out forwards;
+.animationWhenTheMouseLeave {
+    animation: animationWhenTheMouseLeave 0.3s ease-in-out forwards;
 }
-@keyframes animationForGmail_mouseIsIn {
+@keyframes animationWhenTheMouseIsIn {
     0%{
-        width: 95px;
-        left: 300px;
+        width: 60px;
+        left: -324px;
     }
     100%{
-        width: 300px;
-        left: 402px;
+        width: 200px;
+        left: -254px;
     }
 }
-@keyframes animationForGmail_mouseIsOut {
+@keyframes animationWhenTheMouseLeave {
     0%{
-        width: 300px;
-        left: 402px;
+        width: 200px;
+        left: -254px;
     }
     100%{
-        width: 95px;
-        left: 300px;
-    }
-    
-}
-@keyframes animationWhenTheMouseIsInWhatsappIcon {
-    0%{
-        width: 100px;
-        left: 255px;
-    }
-    100%{
-        width: 300px;
-        left: 355px;
-    }
-}
-@keyframes animationWhenTheMouseLeaveTheWhatsappIcon {
-    0%{
-        width: 300px;
-        left: 355px;
-    }
-    100%{
-        width: 100px;
-        left: 255px;
+        width: 60px;
+        left: -324px;
     }
     
 }
@@ -171,6 +156,9 @@
     0% {
         opacity: 0;
         left: 45%;
+    }
+    30% {
+        opacity: 0;
     }
     100% {
         opacity: 1;
@@ -181,7 +169,7 @@
     position: absolute;
     
     left: 50%;
-    transform: translate(-50%, -75%);
+    transform: translate(20%, -75%);
     width: 350px;
     height: 350px;
     background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
@@ -195,7 +183,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 300px;
+    top: 225px;
     left: 0%;
     height: 700px;
     width: 60%;
@@ -205,7 +193,7 @@
 
 }
 .banner_container {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
