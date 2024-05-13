@@ -41,11 +41,11 @@ class TextBalloon {
             this.textBalloon3_Gmail.style.fontSize = '16px';
             this.textBalloon3_Gmail.style.left = 50+'%';
             this.textBalloon3_Gmail.style.top = 0+'px';
-            this.textBalloon3_Gmail.style.transform = 'translate(-225%, 468px)';
+            this.textBalloon3_Gmail.style.transform = 'translate(-225%, 420px)';
             
             gmail.addEventListener('click', () => {
                 this.textBalloon3_Gmail.innerHTML = 'E-mail copiado!';
-                this.textBalloon3_Gmail.style.transform = 'translate(-280%, 478px)';
+                this.textBalloon3_Gmail.style.transform = 'translate(-280%, 430px)';
                 
                 const email = 'felipe95176@gmail.com';
                 const clicked = document.createElement('input');
@@ -73,7 +73,7 @@ class TextBalloon {
             gmail.addEventListener('mouseleave', () => {
                 this.textBalloon3_Gmail.style.animation = 'none';
                 this.textBalloon3_Gmail.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
-                this.textBalloon3_Gmail.style.transform = 'translate(-225%, 468px)';
+                this.textBalloon3_Gmail.style.transform = 'translate(-225%, 420px)';
                 
                 this.textBalloonElement.classList.remove('animationWhenTheMouseIsIn');
                 if(dentro == true && animou == true) {
@@ -96,10 +96,10 @@ class TextBalloon {
             this.textBalloon4_Whatsapp.style.fontSize = '16px';
             this.textBalloon4_Whatsapp.style.left = 45+'%';
             this.textBalloon4_Whatsapp.style.top = 0+'px';
-            this.textBalloon4_Whatsapp.style.transform = 'translate(-215%, 541px)';
+            this.textBalloon4_Whatsapp.style.transform = 'translate(-215%, 493px)';
             whatsapp.addEventListener('click', () => {
                 this.textBalloon4_Whatsapp.innerHTML = 'Número copiado!';
-                this.textBalloon4_Whatsapp.style.transform = 'translate(-260%, 550px)';
+                this.textBalloon4_Whatsapp.style.transform = 'translate(-260%, 502px)';
                 
                 const numPhone = '(84) 98709-5902';
                 const clicked = document.createElement('input');
@@ -126,7 +126,7 @@ class TextBalloon {
             whatsapp.addEventListener('mouseleave', () => {
                 this.textBalloon4_Whatsapp.style.animation = 'none';
                 this.textBalloon4_Whatsapp.innerHTML = 'Clique aqui para<br>copiar o meu número!';
-                this.textBalloon4_Whatsapp.style.transform = 'translate(-215%, 541px)';
+                this.textBalloon4_Whatsapp.style.transform = 'translate(-215%, 493px)';
                 
                 this.textBalloonElement.classList.remove('animationWhenTheMouseIsIn');
                 if(dentro == true && animou == true) {
