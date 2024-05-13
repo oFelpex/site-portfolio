@@ -145,24 +145,24 @@ function textBalloon()
 {
     //Github
     const textBalloon1 = new TextBalloon(
-        -570 + 'px',
-        -30 +'px',
+        480 + 'px',
+        892 +'px',
         60 + 'px',
         60 + 'px'
     );
 
     //Linkedin
     const textBalloon2 = new TextBalloon(
-        -630 + 'px',
-        -105 +'px',
+        480 + 'px',
+        817 +'px',
         60 + 'px',
         60 + 'px'
     );
 
     //Gmail
     const textBalloon3 = new TextBalloon(
-        -768 + 'px',
-        -370 +'px',
+        403 + 'px',
+        547 +'px',
         70 + 'px',
         70 + 'px',
         true
@@ -171,8 +171,8 @@ function textBalloon()
     
     //Whatsapp
     const textBalloon4 = new TextBalloon(
-        -765 + 'px',
-        -370 +'px',
+        475 + 'px',
+        547 +'px',
         70 + 'px',
         70 + 'px',
         false,

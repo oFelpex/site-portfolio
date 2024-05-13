@@ -137,7 +137,7 @@
     --dropshadowForTextBalloon: drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.26));
 }
 .textBalloon {
-    position: relative;
+    position: absolute;
     border-radius: 50px;
     filter: var(--dropshadowForTextBalloon);
     background: rgb(245, 245, 245);
@@ -228,21 +228,17 @@
 @keyframes animationWhenTheMouseIsIn {
     0%{
         width: 70px;
-        left: -370px;
     }
     100%{
         width: 250px;
-        left: -280px;
     }
 }
 @keyframes animationWhenTheMouseLeave {
     0%{
         width: 250px;
-        left: -280px;
     }
     100%{
         width: 70px;
-        left: -370px;
     }
     
 }
@@ -273,34 +269,32 @@
 
 /*Banner com os meus projetos*/
 .bannerWithMyProjects {
-    position: relative;
-    display: flex;
+    position: absolute;
+    display: grid;
     justify-content: center;
     align-items: center;
-    top: 225px;
-    left: 0%;
-    height: 600px;
+    left: 50%;
+    transform: translate(-50%, 70%);
+    height: 1000px;
     width: 60%;
-    border-radius: 50px;
-    background: linear-gradient(rgb(124, 75, 156), rgb(98, 51, 129));
+    background: rgba(240, 248, 255, 0.473);
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.514));
-
 }
 .banner_container {
     position: relative;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
-    background: none;
-    height: 600px;
-    width: 80%;
+    background: white;
+    height: 80%;
+    width: 70%;
 }
 .card {
     margin: 10px;
-    width: 20%;
     height: 80%;
     background-color: black;
     border-radius: 20px;
+    /*justify-content: space-evenly;*/
 }
 .heading {
     text-align: center;
@@ -308,7 +302,12 @@
     align-items: center;
 }
 .description {
-    margin-top: 50px;
+    position: relative;
+    margin-top: 30px;
+    height: 70%;
+    width: 40%;
+    left: -25%;
+    text-align: justify;
 }
 
 /*Fim do banner*/
@@ -316,14 +315,13 @@
     position: absolute;
     height: 300px;
     width: 100%;
-    transform: translate(0%, 175%);
+    top: 300%;
     background: rgb(48, 48, 48);
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: "Arial";
-    font-optical-sizing: auto;
     font-size: 24px;
     color: white;
 }
