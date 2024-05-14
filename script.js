@@ -66,6 +66,7 @@ class TextBalloon {
                 this.textBalloonElement.classList.remove('animationWhenTheMouseLeave');
                 this.textBalloonElement.classList.add('animationWhenTheMouseIsIn');
                 
+                
                 this.textBalloonElement.addEventListener('animationend', () => {
                     animou = true;
                 });
@@ -75,12 +76,13 @@ class TextBalloon {
                 this.textBalloon3_Gmail.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
                 this.textBalloon3_Gmail.style.transform = 'translate(-225%, 420px)';
                 
-                this.textBalloonElement.classList.remove('animationWhenTheMouseIsIn');
                 if(dentro == true && animou == true) {
                     this.textBalloonElement.classList.add('animationWhenTheMouseLeave');
                 }
+                this.textBalloonElement.classList.remove('animationWhenTheMouseIsIn');
                 dentro = false;
                 animou = false;
+
                 });
             }
         if(whatsapp) {
@@ -97,6 +99,7 @@ class TextBalloon {
             this.textBalloon4_Whatsapp.style.left = 45+'%';
             this.textBalloon4_Whatsapp.style.top = 0+'px';
             this.textBalloon4_Whatsapp.style.transform = 'translate(-215%, 493px)';
+            
             whatsapp.addEventListener('click', () => {
                 this.textBalloon4_Whatsapp.innerHTML = 'Número copiado!';
                 this.textBalloon4_Whatsapp.style.transform = 'translate(-260%, 502px)';
@@ -118,19 +121,22 @@ class TextBalloon {
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationWhenTheMouseLeave');
                 this.textBalloonElement.classList.add('animationWhenTheMouseIsIn');
-                
+                this.textBalloonElement.style.marginTop = 2 + 'px';
                 this.textBalloonElement.addEventListener('animationend', () => {
                     animou = true;
+                    this.textBalloonElement.style.marginTop = 2 + 'px';
                 });
             });
             whatsapp.addEventListener('mouseleave', () => {
                 this.textBalloon4_Whatsapp.style.animation = 'none';
                 this.textBalloon4_Whatsapp.innerHTML = 'Clique aqui para<br>copiar o meu número!';
                 this.textBalloon4_Whatsapp.style.transform = 'translate(-215%, 493px)';
+                this.textBalloonElement.style.marginTop = 0 + 'px';
                 
                 this.textBalloonElement.classList.remove('animationWhenTheMouseIsIn');
                 if(dentro == true && animou == true) {
                     this.textBalloonElement.classList.add('animationWhenTheMouseLeave');
+                    this.textBalloonElement.style.marginTop = 2 + 'px';
                 }
                 dentro = false;
                 animou = false;
@@ -145,24 +151,24 @@ function textBalloon()
 {
     //Github
     const textBalloon1 = new TextBalloon(
-        480 + 'px',
-        892 +'px',
+        30 + 'px',
+        -30 +'px',
         60 + 'px',
         60 + 'px'
     );
 
     //Linkedin
     const textBalloon2 = new TextBalloon(
-        480 + 'px',
-        817 +'px',
+        -30 + 'px',
+        -105 +'px',
         60 + 'px',
         60 + 'px'
     );
 
     //Gmail
     const textBalloon3 = new TextBalloon(
-        403 + 'px',
-        547 +'px',
+        40 + '%',
+        -370 +'px',
         70 + 'px',
         70 + 'px',
         true
@@ -171,8 +177,8 @@ function textBalloon()
     
     //Whatsapp
     const textBalloon4 = new TextBalloon(
-        475 + 'px',
-        547 +'px',
+        40 + '%',
+        -370 +'px',
         70 + 'px',
         70 + 'px',
         false,
@@ -182,6 +188,7 @@ function textBalloon()
     textBalloon2.addToBody();
     textBalloon3.addToBody();
     textBalloon4.addToBody();
-    
+    textBalloon3.textBalloonElement.style.transform = 'translate(0, -240%)';
+    textBalloon4.textBalloonElement.style.transform = 'translate(0, -236%)';
 }
 textBalloon();

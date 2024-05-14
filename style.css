@@ -137,7 +137,7 @@
     --dropshadowForTextBalloon: drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.26));
 }
 .textBalloon {
-    position: absolute;
+    position: relative;
     border-radius: 50px;
     filter: var(--dropshadowForTextBalloon);
     background: rgb(245, 245, 245);
@@ -220,7 +220,7 @@
     transform: translate(-162%, 35%);
 }
 .animationWhenTheMouseIsIn {
-    animation: animationWhenTheMouseIsIn 0.3s ease-in-out forwards;
+    animation: animationWhenTheMouseIsIn 0.3s linear forwards;
 }
 .animationWhenTheMouseLeave {
     animation: animationWhenTheMouseLeave 0.3s ease-in-out forwards;
@@ -229,16 +229,64 @@
     0%{
         width: 70px;
     }
+    10% {
+        transform: translate(10%, -239%);
+    }
+    20% {
+        transform: translate(16%, -239%);
+    }
+    25% {
+        transform: translate(19%, -239%);
+    }
+    50% {
+        transform: translate(28%, -239%);
+    }
+    75% {
+        transform: translate(33%, -239%);
+    }
     100%{
         width: 250px;
+        transform: translate(36%, -239%);
     }
 }
 @keyframes animationWhenTheMouseLeave {
     0%{
         width: 250px;
+        transform: translate(36%, -239%);
+    }
+    10% {
+        transform: translate(36%, -239%);
+    }
+    15% {
+        transform: translate(36%, -239%);
+    }
+    20% {
+        transform: translate(35%, -239%);
+    }
+    25% {
+        transform: translate(35%, -239%);
+    }
+    30% {
+        transform: translate(34%, -239%);
+    }
+    40% {
+        transform: translate(32%, -239%);
+    }
+    50% {
+        transform: translate(28%, -239%);
+    }
+    60%{
+        transform: translate(23%, -239%);
+    }
+    80% {
+        transform: translate(11%, -239%);
+    }
+    90% {
+        transform: translate(2%, -239%);
     }
     100%{
         width: 70px;
+        transform: translate(0%, -239%);
     }
     
 }
