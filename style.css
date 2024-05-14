@@ -52,9 +52,9 @@
 .showAboutMe_underlay {
     position: absolute;
     left: 50%;
-    transform: translate(-95%, -150%);
-    width: 450px;
-    height: 180px;
+    transform: translate(-50%, 85%);
+    width: 800px;
+    height: 450px;
     border-radius: 20px;
     opacity: 0;
     background: rgba(153, 0, 255, 0.25);
@@ -120,14 +120,14 @@
     font-size: 36px;
     z-index: 1;
 }
-.aboutMe {
+.shortAboutMe {
     position: absolute;
     left: 50%;
     transform: translate(-125%, -400%);
     background: none;
     z-index: 1;
 }
-.sky {
+.gradient_header {
     width: 100%;
     height: 450px;
     background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
@@ -315,14 +315,58 @@
     filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
 }
 
+/*Sobre mim*/
+.aboutMe_container {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    height: 400px;
+    width: 750px;
+    overflow: hidden;
+    background: none;
+}
+.aboutMe_title {
+    position: absolute;
+    left: 50%;
+    transform: translate(50%, 210%);
+    background: none;
+    color: hsl(289, 82%, 45%);
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.26));
+}
+.photoLaptop_aboutMe{
+    position: relative;
+    height: 300px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    border-radius: 30px;
+
+}
+.complete_aboutMe {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    top: 50%;
+    text-align: justify;
+    background: none;
+    transform: translate(0%, -50%);
+}
+/*Fim do sobre mim*/
+
 /*Banner com os meus projetos*/
+.myProjects_title{
+    position: absolute;
+    left: 0%;
+    transform: translate(0%, -1500%);
+    background: none;
+}
 .bannerWithMyProjects {
     position: absolute;
     display: grid;
     justify-content: center;
     align-items: center;
     left: 50%;
-    transform: translate(-50%, 70%);
+    transform: translate(-50%, 110%);
     height: 1000px;
     width: 60%;
     background: rgba(240, 248, 255, 0.473);
@@ -363,7 +407,7 @@
     position: absolute;
     height: 300px;
     width: 100%;
-    top: 300%;
+    transform: translate(0%, 800%);
     background: rgb(48, 48, 48);
 
     display: flex;
