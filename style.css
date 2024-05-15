@@ -36,46 +36,17 @@
     left: 65%;
     background: none;
     height: 100%;
+    width: 80px;
     cursor: pointer;
     border: none;
     font-size: 16px;
 }
-.showAboutMe {
+.showMyContacts {
     position: absolute;
     left: 70%;
     background: none;
     height: 100%;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-}
-.showAboutMe_underlay {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 85%);
-    width: 800px;
-    height: 450px;
-    border-radius: 20px;
-    opacity: 0;
-    background: rgba(153, 0, 255, 0.25);
-    z-index: 0;
-}
-@keyframes showAboutMe_purple {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-.showMyContacts {
-    position: absolute;
-    left: 75%;
-    background: none;
-    height: 100%;
+    width: 80px;
     cursor: pointer;
     border: none;
     font-size: 16px;
@@ -102,12 +73,44 @@
         opacity: 0;
     }
 }
+.showAboutMe {
+    position: absolute;
+    left: 75%;
+    background: none;
+    height: 100%;
+    width: 80px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+.showAboutMe_underlay {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 85%);
+    width: 800px;
+    height: 450px;
+    border-radius: 20px;
+    opacity: 0;
+    background: rgba(153, 0, 255, 0.25);
+    z-index: 0;
+}
+@keyframes showAboutMe_purple {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 .showMyProjects {
     position: absolute;
     left: 80%;
-    transform: translate(30%, 0%);
     background: none;
     height: 100%;
+    width: 80px;
     cursor: pointer;
     border: none;
     font-size: 16px;
@@ -354,12 +357,6 @@
 /*Fim do sobre mim*/
 
 /*Banner com os meus projetos*/
-.myProjects_title{
-    position: absolute;
-    left: 0%;
-    transform: translate(0%, -1500%);
-    background: none;
-}
 .bannerWithMyProjects {
     position: absolute;
     display: grid;
@@ -368,9 +365,15 @@
     left: 50%;
     transform: translate(-50%, 110%);
     height: 1000px;
-    width: 60%;
+    width: 1000px;
     background: rgba(240, 248, 255, 0.473);
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.514));
+}
+.myProjects_title{
+    position: absolute;
+    left: 0%;
+    transform: translate(0%, -1500%);
+    background: none;
 }
 .banner_container {
     position: relative;
@@ -396,8 +399,8 @@
 .description {
     position: relative;
     margin-top: 30px;
-    height: 70%;
-    width: 40%;
+    height: 75%;
+    width: 45%;
     left: -25%;
     text-align: justify;
 }
