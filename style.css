@@ -115,7 +115,7 @@
     border: none;
     font-size: 16px;
 }
-.title {
+.shortAboutMe_title {
     position: absolute;
     left: 50%;
     transform: translate(-99%, -300%);
@@ -343,6 +343,7 @@
     top: 50%;
     transform: translate(0%, -50%);
     border-radius: 30px;
+    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0, 0.5));
 
 }
 .complete_aboutMe {

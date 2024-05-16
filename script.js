@@ -34,6 +34,7 @@ class TextBalloon {
             this.textBalloon3_Gmail.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
             this.textBalloon3_Gmail.style.position = 'absolute';
             this.textBalloon3_Gmail.style.opacity = 0;
+            this.textBalloon3_Gmail.style.display = 'none';
             this.textBalloon3_Gmail.style.zIndex = 3;
             this.textBalloon3_Gmail.style.textAlign = 'center';
             this.textBalloon3_Gmail.style.background = 'none';
@@ -61,6 +62,7 @@ class TextBalloon {
             let dentro = false;
             gmail.addEventListener('mouseenter', () => {
                 this.textBalloon3_Gmail.style.animation = 'fadeInAndSmoothMoviment 0.5s ease-in-out forwards';
+                this.textBalloon3_Gmail.style.display = 'block';
                 animou = false;
                 dentro = true;
                 this.textBalloonElement.classList.remove('animationWhenTheMouseLeave');
@@ -75,6 +77,7 @@ class TextBalloon {
                 this.textBalloon3_Gmail.style.animation = 'none';
                 this.textBalloon3_Gmail.innerHTML = 'Clique aqui para<br>copiar o meu e-mail!';
                 this.textBalloon3_Gmail.style.transform = 'translate(-225%, 420px)';
+                this.textBalloon3_Gmail.style.display = 'none';
                 
                 if(dentro == true && animou == true) {
                     this.textBalloonElement.classList.add('animationWhenTheMouseLeave');
@@ -91,6 +94,7 @@ class TextBalloon {
             this.textBalloon4_Whatsapp.innerHTML = 'Clique aqui para<br>copiar o meu número!';
             this.textBalloon4_Whatsapp.style.position = 'absolute';
             this.textBalloon4_Whatsapp.style.opacity = 0;
+            this.textBalloon4_Whatsapp.style.display = 'none';
             this.textBalloon4_Whatsapp.style.zIndex = 3;
             this.textBalloon4_Whatsapp.style.textAlign = 'center';
             this.textBalloon4_Whatsapp.style.background = 'none';
@@ -119,6 +123,7 @@ class TextBalloon {
                 this.textBalloon4_Whatsapp.style.animation = 'fadeInAndSmoothMoviment 0.5s ease-in-out forwards';
                 animou = false;
                 dentro = true;
+                this.textBalloon4_Whatsapp.style.display = 'block';
                 this.textBalloonElement.classList.remove('animationWhenTheMouseLeave');
                 this.textBalloonElement.classList.add('animationWhenTheMouseIsIn');
                 this.textBalloonElement.style.marginTop = 2 + 'px';
@@ -129,6 +134,7 @@ class TextBalloon {
             });
             whatsapp.addEventListener('mouseleave', () => {
                 this.textBalloon4_Whatsapp.style.animation = 'none';
+                this.textBalloon4_Whatsapp.style.display = 'none';
                 this.textBalloon4_Whatsapp.innerHTML = 'Clique aqui para<br>copiar o meu número!';
                 this.textBalloon4_Whatsapp.style.transform = 'translate(-215%, 493px)';
                 this.textBalloonElement.style.marginTop = 0 + 'px';
