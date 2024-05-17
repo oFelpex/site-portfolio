@@ -10,7 +10,7 @@ function showAboutMe() {
     });
 }
 function showMyContacts() {
-    returnTop(0);
+    returnTop(100);
     showMyContacts_underlay = document.querySelector('.showMyContacts_underlay');
     showMyContacts_underlay.style.animation = 'showMyContacts_purple 1s ease-in-out';
     showMyContacts_underlay.addEventListener('animationend', () =>{

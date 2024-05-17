@@ -126,7 +126,9 @@
 .shortAboutMe {
     position: absolute;
     left: 50%;
-    transform: translate(-125%, -400%);
+    width: 350px;
+    transform: translate(-115%, -400%);
+    text-align: justify;
     background: none;
     z-index: 1;
 }
