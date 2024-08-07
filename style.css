@@ -11,45 +11,35 @@
 }
 .navigationBar {
     position: fixed;
-    z-index: 10;
+    display: flex;
     background:  none;
+    align-items: center;
     width: 100%;
     height: 55px;
     z-index: 10;
     backdrop-filter: blur(2px);
 }
-
-.felpex {
-    position: absolute;
-    left: 10%;
-    top: 35%;
+.buttons {
     background: none;
-    border: none;
+    display: flex;
+    gap: 25px;
+}
+.felpex {
+    position: relative;
+    background: none;
     cursor: default;
     font-family: "Lato", sans-serif;
     font-weight: bold;
+    font-size: 20px;
+}
+.home, .showMyContacts, .showAboutMe, .showMyProjects {
+    position: relative;
+    background: none;
+    height: 100%;
+    cursor: pointer;
+    border: none;
     font-size: 18px;
-    z-index: 11;
-}
-.home {
-    position: absolute;
-    left: 65%;
-    background: none;
-    height: 100%;
-    width: 80px;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-}
-.showMyContacts {
-    position: absolute;
-    left: 70%;
-    background: none;
-    height: 100%;
-    width: 80px;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
+    margin-left: auto;
 }
 .showMyContacts_underlay {
     position: absolute;
@@ -73,16 +63,6 @@
         opacity: 0;
     }
 }
-.showAboutMe {
-    position: absolute;
-    left: 75%;
-    background: none;
-    height: 100%;
-    width: 80px;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-}
 .showAboutMe_underlay {
     position: absolute;
     left: 50%;
@@ -104,16 +84,6 @@
     100% {
         opacity: 0;
     }
-}
-.showMyProjects {
-    position: absolute;
-    left: 80%;
-    background: none;
-    height: 100%;
-    width: 80px;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
 }
 .shortAboutMe_title {
     position: absolute;
@@ -351,8 +321,8 @@
 .complete_aboutMe {
     position: relative;
     width: 300px;
-    height: 250px;
-    top: 50%;
+    height:fit-content;
+    top: 40%;
     text-align: justify;
     background: none;
     transform: translate(0%, -50%);

@@ -10,35 +10,37 @@
 <body>
     <header>
         <nav class="navigationBar">
-            <div class="felpex">FELPEX</div>
-            <button class="home" onclick="returnTop(0)">Início</button>
-            <button class="showAboutMe" onclick="showAboutMe()">Sobre</button>
-            <button class="showMyContacts" onclick="showMyContacts()">Contatos</button>
-            <button class="showMyProjects" onclick="showMyProjects()">Projetos</button>
+            <h2 class="felpex">FELPEX</h2>
+            <div class="buttons">
+                <button class="home" onclick="returnTop(0)">Início</button>
+                <button class="showAboutMe" onclick="showAboutMe()">Sobre</button>
+                <button class="showMyContacts" onclick="showMyContacts()">Contatos</button>
+                <button class="showMyProjects" onclick="showMyProjects()">Projetos</button>
+            </div>
         </nav>
         <div class="gradient_header"></div>
-        <img src="assets\eu.png" alt="Esse sou eu!" class = myPhoto>
-        <nav>
+        <img src="assets/eu.png" class = myPhoto alt="Uma foto minha usando óculos azuis, cabelo e olhos preto.">
+        <section>
             <a href="https://github.com/oFelpex" target="_blank">
-                <img src="assets\icon_github.png" class=icon_github>
+                <img src="assets/icons/icon_github.png" class=icon_github alt="Ícone do github">
             </a>
             <a href="https://www.linkedin.com/in/felipe-costa-569a461b1/" target="_blank">
-                <img src="assets\icon_linkedin.png" class=icon_linkedin>
+                <img src="assets/icons/icon_linkedin.png" class=icon_linkedin alt="Ícone do linkedin">
             </a>
-            <img src="assets\icon_whatsapp.png" class="icon_whatsapp">
+            <img src="assets/icons/icon_whatsapp.png" class="icon_whatsapp" alt="Ícone do whatsapp">
             <div class="overlay_whatsapp"></div>
-            <img src="assets\icon_gmail.png" class="icon_gmail">
+            <img src="assets/icons/icon_gmail.png" class="icon_gmail" alt="Ícone do g-mail">
             <div class="overlay_gmail"></div>
-        </nav>
+        </section>
         <h1 class="shortAboutMe_title">Desenvolvedor Front-End<br>JavaScript</h1>
-        <p class="shortAboutMe">Olá! Me chamo Felipe Costa e sou um dev iniciante com foco no Front-End</p>
+        <p class="shortAboutMe">Olá! Me chamo Felipe Costa e sou um dev com foco no Front-End</p>
         <div class="showAboutMe_underlay"></div>
         <div class="showMyContacts_underlay"></div>
     </header>
     <div class="aboutMe_container">
         <h3 class="aboutMe_title">Sobre mim</h3>
-        <img src="assets/template_laptop_aboutMe.jpg" alt="notebook, laptop template. Fonte: unsplash" class="photoLaptop_aboutMe">
-        <p class="complete_aboutMe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, iure dicta repellendus illum labore dolores, ad commodi esse, similique nostrum consequatur eligendi tempore voluptate id aliquid sunt ipsa enim pariatur.</p>
+        <img src="assets/template_laptop_aboutMe.jpg" class="photoLaptop_aboutMe" alt="Uma mesa com um notebook e uma caneca. Fonte: unsplash">
+        <p class="complete_aboutMe">Sou estudando de Ciências e Tecnologia com ênfase em Engenharia da Computação pela UFRN, me interessei pela área após estudar JavaScript na faculdade e desde então passei a estudar por conta própria, me aprofundando na linguagem, em suas bibliotecas como a do React e em alguns frameworks como Angular.</p>
     </div>
     
     
