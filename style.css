@@ -9,6 +9,9 @@
     overflow-x: hidden;
     font-family: "Roboto", sans-serif;
 }
+:root {
+    --dropshadowForTextBalloon: drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.26));
+}
 .navigationBar {
     position: fixed;
     display: flex;
@@ -66,7 +69,7 @@
 .showAboutMe_underlay {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 85%);
+    transform: translate(-50%, 80%);
     width: 800px;
     height: 450px;
     border-radius: 20px;
@@ -93,7 +96,7 @@
     font-size: 36px;
     z-index: 1;
 }
-.shortAboutMe {
+.shortAboutMe_paragraph {
     position: absolute;
     left: 50%;
     width: 350px;
@@ -102,14 +105,11 @@
     background: none;
     z-index: 1;
 }
-.gradient_header {
+.gradientCape {
     width: 100%;
     height: 450px;
     background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
     transition: height 0.5s ease;
-}
-:root {
-    --dropshadowForTextBalloon: drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.26));
 }
 .textBalloon {
     position: relative;
@@ -295,16 +295,35 @@
     position: absolute;
     display: flex;
     left: 50%;
-    transform: translate(-50%, 100%);
-    height: 400px;
+    transform: translate(-50%, 132%);
     width: 750px;
-    overflow: hidden;
+    height: 320px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+.teste {
+    position: relative;
+    display: flex;
+    background: none;
+
+    flex-direction: column;
+    justify-content: center;
+    height: 320px;
+    gap: 20px;
+}
+.aboutMe_icons {
+    position: relative;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.aboutMe_icons img {
+    border-radius: 10px;
     background: none;
 }
 .aboutMe_title {
-    position: absolute;
-    left: 50%;
-    transform: translate(50%, 210%);
     background: none;
     color: hsl(289, 82%, 45%);
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.26));
@@ -312,20 +331,14 @@
 .photoLaptop_aboutMe{
     position: relative;
     height: 300px;
-    top: 50%;
-    transform: translate(0%, -50%);
     border-radius: 30px;
     filter: drop-shadow(0px 0px 5px rgb(0, 0, 0, 0.5));
 
 }
-.complete_aboutMe {
-    position: relative;
+.aboutMe_completed {
     width: 300px;
-    height:fit-content;
-    top: 40%;
     text-align: justify;
     background: none;
-    transform: translate(0%, -50%);
 }
 /*Fim do sobre mim*/
 

@@ -2,7 +2,7 @@ function returnTop(topValue) {
     window.scrollTo({top: topValue, behavior: 'smooth'});
 }
 function showAboutMe() {
-    returnTop(650);
+    returnTop(620);
     showAboutMe_underlay = document.querySelector('.showAboutMe_underlay');
     showAboutMe_underlay.style.animation = 'showAboutMe_purple 1s ease-in-out';
     showAboutMe_underlay.addEventListener('animationend', () =>{
