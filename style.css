@@ -5,9 +5,14 @@
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
-    background-color: aliceblue;
-    overflow-x: hidden;
     font-family: "Roboto", sans-serif;
+    background-color: aliceblue;
+}
+.gradientCape {
+    display: block;
+    background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
+    width: 100%;
+    height: 450px;
 }
 :root {
     --dropshadowForTextBalloon: drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.26));
@@ -88,201 +93,60 @@
         opacity: 0;
     }
 }
+/*SOCOROOOOOOOOOO*/
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 70%;
+}
 .shortAboutMe_title {
-    position: absolute;
-    left: 50%;
-    transform: translate(-99%, -300%);
     background: none;
+    grid-row: 1;
+    grid-column: 1;
     font-size: 36px;
-    z-index: 1;
 }
 .shortAboutMe_paragraph {
-    position: absolute;
-    left: 50%;
+    grid-row: 2;
+    grid-column: 1;
     width: 350px;
-    transform: translate(-115%, -400%);
     text-align: justify;
     background: none;
-    z-index: 1;
 }
-.gradientCape {
-    width: 100%;
-    height: 450px;
-    background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
-    transition: height 0.5s ease;
-}
-.textBalloon {
-    position: relative;
-    border-radius: 50px;
-    filter: var(--dropshadowForTextBalloon);
-    background: rgb(245, 245, 245);
-}
-.icon_github {
-    position: absolute;
-    height: 50px;
-    
-    left: 50%;
-    transform: translate(-110%, 70%);
-    z-index: 1;
 
+.icon_github {
+    grid-row: 3;
+    grid-column: 1;
+    height: 50px;
     background: none;
     filter: var(--dropshadowForTextBalloon);
 }
 .icon_linkedin {
-    position: absolute;
+    grid-row: 3;
+    grid-column: 2;
     height: 50px;
-    
-    left: 50%;
-    transform: translate(-260%, 70%);
-    z-index: 1;
-
     background: none;
     filter: var(--dropshadowForTextBalloon);
 }
 .icon_gmail {
-    position: absolute;
+    grid-row: 3;
+    grid-column: 3;
     height: 60px;
-    
-    left: 50%;
-    transform: translate(-667%, -70%);
-    z-index: 4;
-
     background: white;
     border-radius: 50%;
     filter: var(--dropshadowForTextBalloon);
-}
-.overlay_gmail {
-    position: absolute;
-    height: 70px;
-    width: 70px;
-    border-radius: 50px;
-    left: 50%;
-    transform: translate(-578%, -68%);
-    background: none;
-    z-index: 4;
-    cursor: pointer;
-    
-}
-.overlay_gmail:hover {
-    width: 250px;
-    transform: translate(-162%, -68%);
 }
 .icon_whatsapp {
-    position: absolute;
+    grid-row: 3;
+    grid-column: 4;
     height: 60px;
-    
-    left: 50%;
-    transform: translate(-667%, 50%);
-    z-index: 4;
-
     background: white;
     border-radius: 50%;
     filter: var(--dropshadowForTextBalloon);
 }
-.overlay_whatsapp {
-    position: absolute;
-    height: 70px;
-    width: 70px;
-    border-radius: 50px;
-    left: 50%;
-    transform: translate(-578%, 35%);
-    background: none;
-    z-index: 4;
-    cursor: pointer;
-}
-.overlay_whatsapp:hover {
-    width: 250px;
-    transform: translate(-162%, 35%);
-}
-.animationWhenTheMouseIsIn {
-    animation: animationWhenTheMouseIsIn 0.3s linear forwards;
-}
-.animationWhenTheMouseLeave {
-    animation: animationWhenTheMouseLeave 0.3s ease-in-out forwards;
-}
-@keyframes animationWhenTheMouseIsIn {
-    0%{
-        width: 70px;
-    }
-    10% {
-        transform: translate(10%, -239%);
-    }
-    20% {
-        transform: translate(16%, -239%);
-    }
-    25% {
-        transform: translate(19%, -239%);
-    }
-    50% {
-        transform: translate(28%, -239%);
-    }
-    75% {
-        transform: translate(33%, -239%);
-    }
-    100%{
-        width: 250px;
-        transform: translate(36%, -239%);
-    }
-}
-@keyframes animationWhenTheMouseLeave {
-    0%{
-        width: 250px;
-        transform: translate(36%, -239%);
-    }
-    10% {
-        transform: translate(36%, -239%);
-    }
-    15% {
-        transform: translate(36%, -239%);
-    }
-    20% {
-        transform: translate(35%, -239%);
-    }
-    25% {
-        transform: translate(35%, -239%);
-    }
-    30% {
-        transform: translate(34%, -239%);
-    }
-    40% {
-        transform: translate(32%, -239%);
-    }
-    50% {
-        transform: translate(28%, -239%);
-    }
-    60%{
-        transform: translate(23%, -239%);
-    }
-    80% {
-        transform: translate(11%, -239%);
-    }
-    90% {
-        transform: translate(2%, -239%);
-    }
-    100%{
-        width: 70px;
-        transform: translate(0%, -239%);
-    }
-    
-}
-@keyframes fadeInAndSmoothMoviment {
-    0% {
-        opacity: 0;
-        left: 45%;
-    }
-    30% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        left: 50%;
-    }
-}
 .myPhoto {
-    position: absolute;
-    
-    left: 50%;
-    transform: translate(20%, -75%);
+    grid-row: 1;
+    grid-column: 5;
     width: 350px;
     height: 350px;
     background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
@@ -291,6 +155,7 @@
 }
 
 /*Sobre mim*/
+/* DAR UM JEITO DE TIRAR ESSA POSITION */
 .aboutMe_container {
     position: absolute;
     display: flex;
@@ -375,7 +240,6 @@
     height: 80%;
     background-color: black;
     border-radius: 20px;
-    /*justify-content: space-evenly;*/
 }
 .heading {
     text-align: center;
