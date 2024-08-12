@@ -62,14 +62,18 @@ body {
     border-radius: 20px;
     opacity: 0;
     background: rgba(153, 0, 255, 0.25);
+    z-index: 0;
 }
 .shortAboutMe_title {
+    text-align: left;
     grid-row: 3;
     grid-column: 3 / span 4;
     font-size: 36px;
+    z-index: 1;
 }
 .shortAboutMe_paragraph {
     text-align: justify;
+    z-index: 1;
     grid-row: 4 / span 2;
     grid-column: 3 / span 4;
 }
@@ -132,6 +136,7 @@ body {
     background: rgba(153, 0, 255, 0.25);
     grid-column: 2 / span 6;
     grid-row: 1 / span 5;
+    z-index: 0;
 }
 @keyframes showAboutMe_purple {
     0% {
@@ -195,15 +200,19 @@ body {
 .myProjects_title {
     grid-column: 3 / span 2;
     grid-row: 3;
+    z-index: 1;
 }
 .description {
     text-align: justify;
+    z-index: 1;
 }
 .img {
     border-radius: 10px;
+    z-index: 1;
 }
 .project_title {
     text-align: center;
+    z-index: 1;
 }
 .project_title.first {
     grid-column: 3;
@@ -237,6 +246,7 @@ body {
     background: rgba(153, 0, 255, 0.25);
     grid-column: 2 / span 4;
     grid-row: 2 / span 8;
+    z-index: 0;
 }
 @keyframes showMyProjects_purple {
     0% {
