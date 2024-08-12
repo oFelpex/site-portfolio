@@ -2,7 +2,7 @@ function returnTop(topValue) {
     window.scrollTo({top: topValue, behavior: 'smooth'});
 }
 function showAboutMe() {
-    returnTop(620);
+    returnTop(520);
     showAboutMe_underlay = document.querySelector('.showAboutMe_underlay');
     showAboutMe_underlay.style.animation = 'showAboutMe_purple 1s ease-in-out';
     showAboutMe_underlay.addEventListener('animationend', () =>{
@@ -10,7 +10,7 @@ function showAboutMe() {
     });
 }
 function showMyContacts() {
-    returnTop(100);
+    returnTop(0);
     showMyContacts_underlay = document.querySelector('.showMyContacts_underlay');
     showMyContacts_underlay.style.animation = 'showMyContacts_purple 1s ease-in-out';
     showMyContacts_underlay.addEventListener('animationend', () =>{
@@ -18,5 +18,5 @@ function showMyContacts() {
     });
 }
 function showMyProjects() {
-    returnTop(1450);
+    returnTop(1200);
 }

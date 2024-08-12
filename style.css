@@ -5,15 +5,10 @@
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
-
     font-family: "Roboto", sans-serif;
-    background-color: aliceblue;
 }
-.gradientCape {
-    display: block;
-    background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
-    width: 100%;
-    height: 450px;
+body {
+    background-color: aliceblue;
 }
 :root {
     --dropshadowForTextBalloon: drop-shadow(0px 0px 3px hsla(0, 0%, 0%, 0.26));
@@ -25,8 +20,8 @@
     align-items: center;
     width: 100%;
     height: 55px;
-    z-index: 10;
     backdrop-filter: blur(2px);
+    z-index: 1;
 }
 .buttons {
     background: none;
@@ -46,18 +41,65 @@
     cursor: pointer;
     border: none;
     font-size: 18px;
-    margin-left: auto;
+}
+
+/*O container principal, onde tem minha foto e um pouco sobre minha pessoa*/
+.main-container {
+    background: linear-gradient(hsla(240, 75%, 75%, .6), hsla(300, 75%, 75%, .2), transparent);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 10px;
+    grid-template-columns: repeat(7, 1fr) 3fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr) 1fr repeat(2, 0.5fr);
+    width: 100%;
 }
 .showMyContacts_underlay {
-    position: absolute;
-    left: 50%;
-    transform: translate(-95%, -35%);
-    width: 450px;
-    height: 175px;
+    grid-column: 2 / span 8;
+    grid-row: 2 / span 5;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     opacity: 0;
     background: rgba(153, 0, 255, 0.25);
-    z-index: 0;
+}
+.shortAboutMe_title {
+    grid-row: 2;
+    grid-column: 3 / span 4;
+    font-size: 36px;
+}
+.shortAboutMe_paragraph {
+    text-align: justify;
+    grid-row: 3 / span 2;
+    grid-column: 3 / span 4;
+}
+.icon {
+    grid-row: 5;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    filter: var(--dropshadowForTextBalloon);
+}
+.icon_github {
+    grid-column: 3;
+}
+.icon_linkedin {
+    grid-column: 4;
+}
+.icon_gmail {
+    grid-column: 5;
+}
+.icon_whatsapp {
+    grid-column: 6;
+}
+.myPhoto {
+    grid-column: 8;
+    grid-row: 2 / span 4;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
+    border-radius: 50%;
+    filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
 }
 @keyframes showMyContacts_purple {
     0% {
@@ -70,16 +112,26 @@
         opacity: 0;
     }
 }
+
+/*Sobre mim*/
+.aboutMe_container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 4fr 1fr 1fr;
+    width: 100%;
+    background: none;
+}
 .showAboutMe_underlay {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 80%);
-    width: 800px;
-    height: 450px;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     opacity: 0;
     background: rgba(153, 0, 255, 0.25);
-    z-index: 0;
+    grid-column: 2 / span 6;
+    grid-row: 1 / span 5;
 }
 @keyframes showAboutMe_purple {
     0% {
@@ -92,174 +144,60 @@
         opacity: 0;
     }
 }
-/*SOCOROOOOOOOOOO*/
-.main-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 70%;
-}
-.shortAboutMe_title {
-    background: none;
-    grid-row: 1;
-    grid-column: 1;
-    font-size: 36px;
-}
-.shortAboutMe_paragraph {
-    grid-row: 2;
-    grid-column: 1;
-    width: 350px;
-    text-align: justify;
-    background: none;
-}
-
-.icon_github {
-    grid-row: 3;
-    grid-column: 1;
-    height: 50px;
-    background: none;
-    filter: var(--dropshadowForTextBalloon);
-}
-.icon_linkedin {
-    grid-row: 3;
-    grid-column: 2;
-    height: 50px;
-    background: none;
-    filter: var(--dropshadowForTextBalloon);
-}
-.icon_gmail {
-    grid-row: 3;
+.photoLaptop_aboutMe {
     grid-column: 3;
-    height: 60px;
-    background: white;
-    border-radius: 50%;
-    filter: var(--dropshadowForTextBalloon);
-}
-.icon_whatsapp {
-    grid-row: 3;
-    grid-column: 4;
-    height: 60px;
-    background: white;
-    border-radius: 50%;
-    filter: var(--dropshadowForTextBalloon);
-}
-.myPhoto {
-    grid-row: 1;
-    grid-column: 5;
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
-    border-radius: 50%;
-    filter: drop-shadow(2px 2px 3px hsla(0, 0%, 0%, 0.26));
-}
-
-/*Sobre mim*/
-/* DAR UM JEITO DE TIRAR ESSA POSITION */
-.aboutMe_container {
-    position: absolute;
-    display: flex;
-    left: 50%;
-    transform: translate(-50%, 132%);
-    width: 750px;
-    height: 320px;
-    align-items: center;
-    justify-content: center;
-    background: none;
-}
-.teste {
-    position: relative;
-    display: flex;
-    background: none;
-
-    flex-direction: column;
-    justify-content: center;
-    height: 320px;
-    gap: 20px;
-}
-.aboutMe_icons {
-    position: relative;
-    background: none;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-}
-.aboutMe_icons img {
-    border-radius: 10px;
-    background: none;
+    grid-row: 2 / span 3;
+    border-radius: 30px;
+    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0, 0.5));
 }
 .aboutMe_title {
+    white-space: nowrap;
+    grid-column: 5;
+    grid-row: 2;
     background: none;
     color: hsl(289, 82%, 45%);
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.26));
-}
-.photoLaptop_aboutMe{
-    position: relative;
-    height: 300px;
-    border-radius: 30px;
-    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0, 0.5));
-
+    z-index: 1;
 }
 .aboutMe_completed {
-    width: 300px;
+    grid-column: 4 / span 3;
+    grid-row: 3;
     text-align: justify;
     background: none;
+    z-index: 1;
+}
+.icon_angular {
+    grid-column: 4;
+    grid-row: 4;
+    z-index: 1;
+}
+.icon_react {
+    grid-column: 5;
+    grid-row: 4;
+    z-index: 1;
+}
+.icon_js {
+    grid-column: 6;
+    grid-row: 4;
+    z-index: 1;
 }
 /*Fim do sobre mim*/
 
 /*Banner com os meus projetos*/
 .bannerWithMyProjects {
-    position: absolute;
     display: grid;
     justify-content: center;
     align-items: center;
-    left: 50%;
-    transform: translate(-50%, 110%);
-    height: 1000px;
-    width: 1000px;
+
     background: rgba(240, 248, 255, 0.473);
     filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.514));
 }
-.myProjects_title{
-    position: absolute;
-    left: 0%;
-    transform: translate(0%, -1500%);
-    background: none;
-}
-.banner_container {
-    position: relative;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    height: 80%;
-    width: 70%;
-}
-.card {
-    margin: 10px;
-    height: 80%;
-    background-color: black;
-    border-radius: 20px;
-}
-.heading {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.description {
-    position: relative;
-    margin-top: 30px;
-    height: 75%;
-    width: 45%;
-    left: -25%;
-    text-align: justify;
-}
+
 
 /*Fim do banner*/
 .baseboard {
-    position: absolute;
     height: 300px;
     width: 100%;
-    transform: translate(0%, 800%);
     background: rgb(48, 48, 48);
 
     display: flex;
