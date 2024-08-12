@@ -51,12 +51,12 @@ body {
     justify-items: center;
     grid-gap: 10px;
     grid-template-columns: repeat(7, 1fr) 3fr 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr) 1fr repeat(2, 0.5fr);
+    grid-template-rows: repeat(4, 1fr) 1fr repeat(3, 0.5fr);
     width: 100%;
 }
 .showMyContacts_underlay {
     grid-column: 2 / span 8;
-    grid-row: 2 / span 5;
+    grid-row: 2 / span 6;
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -64,17 +64,17 @@ body {
     background: rgba(153, 0, 255, 0.25);
 }
 .shortAboutMe_title {
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 3 / span 4;
     font-size: 36px;
 }
 .shortAboutMe_paragraph {
     text-align: justify;
-    grid-row: 3 / span 2;
+    grid-row: 4 / span 2;
     grid-column: 3 / span 4;
 }
 .icon {
-    grid-row: 5;
+    grid-row: 6;
     height: 50px;
     background: white;
     border-radius: 50%;
@@ -94,7 +94,7 @@ body {
 }
 .myPhoto {
     grid-column: 8;
-    grid-row: 2 / span 4;
+    grid-row: 3 / span 4;
     width: 350px;
     height: 350px;
     background: linear-gradient(hsla(184, 36%, 69%, 0.005), hsla(239, 55%, 59%, 0.214));
@@ -186,12 +186,70 @@ body {
 /*Banner com os meus projetos*/
 .bannerWithMyProjects {
     display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr) 2fr 1fr 1fr 2fr 1fr 1fr;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-
-    background: rgba(240, 248, 255, 0.473);
-    filter: drop-shadow(0px 0px 5px hsla(0, 0%, 0%, 0.514));
 }
+.myProjects_title {
+    grid-column: 3 / span 2;
+    grid-row: 3;
+}
+.description {
+    text-align: justify;
+}
+.img {
+    border-radius: 10px;
+}
+.project_title {
+    text-align: center;
+}
+.project_title.first {
+    grid-column: 3;
+    grid-row: 4;
+}
+.description.first {
+    grid-column: 3;
+    grid-row: 5;
+}
+.img.agora {
+    grid-column: 4;
+    grid-row: 4 / span 2;
+}
+.project_title.second {
+    grid-column: 4;
+    grid-row: 7;
+}
+.description.second {
+    grid-column: 4;
+    grid-row: 8;
+}
+.img.spaceHero {
+    grid-column: 3;
+    grid-row: 7 / span 2;
+}
+.showMyProjects_underlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    opacity: 0;
+    background: rgba(153, 0, 255, 0.25);
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 8;
+}
+@keyframes showMyProjects_purple {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 
 
 /*Fim do banner*/

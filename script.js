@@ -19,4 +19,9 @@ function showMyContacts() {
 }
 function showMyProjects() {
     returnTop(1200);
+    showMyProjects_underlay = document.querySelector('.showMyProjects_underlay');
+    showMyProjects_underlay.style.animation = 'showMyProjects_purple 1s ease-in-out';
+    showMyProjects_underlay.addEventListener('animationend', () =>{
+        showMyProjects_underlay.style.animation = 'none';
+    });
 }
